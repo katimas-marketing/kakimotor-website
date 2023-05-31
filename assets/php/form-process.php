@@ -45,7 +45,7 @@ if (empty($_POST["gridCheck"])) {
 }
 
 // Update here your email address
-$EmailTo = "example@gmail.com";
+$EmailTo = "enquiries@kaki.com.my";
 
 $Subject = "New Message Received";
 

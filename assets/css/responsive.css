@@ -69,6 +69,8 @@
     text-align: center;
     padding-top: 145px;
     padding-bottom: 100px;
+    min-width: 100%;
+    overflow-x: hidden;
   }
 
   .banner-area:before {

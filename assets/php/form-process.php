@@ -1,87 +1,50 @@
 <?php
 
-$errorMSG = "";
+require 'PHPMailer\src\PHPMailer.php';
+require 'PHPMailer\src\SMTP.php';
+require 'PHPMailer\src\Exception.php';
 
-// NAME
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
-} else {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
     $name = $_POST["name"];
-}
-
-// EMAIL
-if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
-} else {
     $email = $_POST["email"];
-}
-
-// MSG SUBJECT
-if (empty($_POST["msg_subject"])) {
-    $errorMSG .= "Subject is required ";
-} else {
-    $msg_subject = $_POST["msg_subject"];
-}
-
-// Phone Number
-if (empty($_POST["phone_number"])) {
-    $errorMSG .= "Number is required ";
-} else {
     $phone_number = $_POST["phone_number"];
-}
-
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required";
-} else {
     $message = $_POST["message"];
-}
 
-// gridCheck
-if (empty($_POST["gridCheck"])) {
-    $errorMSG .= "Checkbox is required";
-} else {
-    $gridCheck = $_POST["gridCheck"];
-}
+    // Validate form data (you can add more validation if needed)
+    if (empty($name) || empty($email) || empty($phone_number) || empty($message)) {
+        echo "Please fill in all fields.";
+        exit;
+    }
 
-// Update here your email address
-$EmailTo = "example@gmail.com";
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer();
 
-$Subject = "New Message Received";
+    // Set up SMTP configuration
+    $mail->isSMTP();
+    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->SMTPAuth = true;
+    $mail->Port = 2525;
+    $mail->Username = '6f4658e47f04ac';
+    $mail->Password = 'b4b1e295aab8cd';
 
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
-$Body .= "Subject: ";
-$Body .= $msg_subject;
-$Body .= "\n";
-$Body .= "Phone Number: ";
-$Body .= $phone_number;
-$Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
-$Body .= "\n";
-$Body .= "GDPR Agreement: ";
-$Body .= $gridCheck;
-$Body .= "\n";
+    // Set up sender and recipient
+    $mail->setFrom($email, $name);
+    $mail->addAddress('sendingtesting23@gmail.com');
 
-// send email
-$success = mail($EmailTo, $Subject, $Body);
+    // Set email subject and body
+    $mail->Subject = "New Message Received";
+    $mail->Body = "Name: $name\nEmail: $email\nPhone Number: $phone_number\nMessage:\n$message";
 
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
+    // Attempt to send the email
+    if ($mail->send()) {
+        echo "Your message has been sent. Thank you!";
     } else {
-        echo $errorMSG;
+        echo "Something went wrong, please resend the again:(";
     }
 }
-
 ?>

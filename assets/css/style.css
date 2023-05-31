@@ -46,12 +46,23 @@ This files table contents are outlined below>>>>>
   display: block;
 }
 
+html {
+  overflow-x: hidden;
+  /* width: 100%; */
+  width: 100vw;
+  height: 100vh;
+  resize: none;
+}
+
 
 body {
   font-family: "Inter", sans-serif;
   color: #333333;
   background-color: #ffffff;
   font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+  resize: none;
 }
 
 h1,

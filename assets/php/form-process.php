@@ -1,8 +1,11 @@
 <?php
-
+require __DIR__ . '/../../vendor/autoload.php';
 require 'PHPMailer\src\PHPMailer.php';
 require 'PHPMailer\src\SMTP.php';
 require 'PHPMailer\src\Exception.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -24,16 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
 
-    // Read SMTP configuration from env.ini
-    $config = parse_ini_file('env.ini');
-
     // Set up SMTP configuration
     $mail->isSMTP();
-    $mail->Host = $config['Host'];
-    $mail->SMTPAuth = true;
-    $mail->Port = $config['Port'];
-    $mail->Username = $config['Username'];
-    $mail->Password = $config['Password'];
+    $mail->Host = $_ENV['SMTP_HOST'];
+    $mail->SMTPAuth = $_ENV['SMTP_AUTH'];
+    $mail->Port = $_ENV['SMTP_PORT'];
+    $mail->Username = $_ENV['SMTP_USERNAME'];
+    $mail->Password = $_ENV['SMTP_PASSWORD'];
 
     // Set up sender and recipient
     $mail->setFrom($email, $name);
@@ -47,9 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($mail->send()) {
         echo "Your message has been sent. Thank you!";
     } else {
-        echo "Something went wrong, please resend the again:(";
+        echo "Something went wrong, please resend it again.";
     }
 }
-
-
 ?>

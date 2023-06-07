@@ -3802,6 +3802,16 @@ footer .footer-img {
   color: #28a745;
 }
 
+.contact-area .contact-right .text-center{
+  color: #dc3545 !important;
+  font-weight: 400px !important;
+  font-size: 20px !important;
+ 
+}
+
+
+
+
 /*----- End Contact CSS -----*/
 /*----- Preloader CSS -----*/
 .loader {

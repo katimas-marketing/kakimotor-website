@@ -24,17 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Create a new PHPMailer instance
     $mail = new PHPMailer();
 
+    // Read SMTP configuration from env.ini
+    $config = parse_ini_file('env.ini');
+
     // Set up SMTP configuration
     $mail->isSMTP();
-    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->Host = $config['Host'];
     $mail->SMTPAuth = true;
-    $mail->Port = 2525;
-    $mail->Username = '6f4658e47f04ac';
-    $mail->Password = 'b4b1e295aab8cd';
+    $mail->Port = $config['Port'];
+    $mail->Username = $config['Username'];
+    $mail->Password = $config['Password'];
 
     // Set up sender and recipient
     $mail->setFrom($email, $name);
-    $mail->addAddress('sendingtesting23@gmail.com');
+    $mail->addAddress('enquiries@kaki.com.my');
 
     // Set email subject and body
     $mail->Subject = "New Message Received";
@@ -47,4 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Something went wrong, please resend the again:(";
     }
 }
+
+
 ?>

@@ -3809,6 +3809,12 @@ footer .footer-img {
  
 }
 
+.containerContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 

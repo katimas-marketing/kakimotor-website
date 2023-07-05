@@ -77,7 +77,7 @@ function updateFooter(language) {
     textPrivacy.textContent = 'Dasar Privasi';
     
   } else {
-    textFooterAdd.textContent = 'We are dedicated to providing our customers with the best possible experience when shopping for a motorbike.&nbsp; We look forward to helping you find the perfect bike for your needs and supporting you throughout your motorbike journey';
+    textFooterAdd.textContent = 'We are dedicated to providing our customers with the best possible experience when shopping for a motorbike. We look forward to helping you find the perfect bike for your needs and supporting you throughout your motorbike journey';
     textQuickLink.textContent = 'Quick Links';
     textHomeF.textContent = 'Home';
     textAboutF.textContent = 'About Us';

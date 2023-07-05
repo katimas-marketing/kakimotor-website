@@ -46,12 +46,23 @@ This files table contents are outlined below>>>>>
   display: block;
 }
 
+html {
+  overflow-x: hidden;
+  /* width: 100%; */
+  width: 100vw;
+  height: 100vh;
+  resize: none;
+}
+
 
 body {
   font-family: "Inter", sans-serif;
   color: #333333;
   background-color: #ffffff;
   font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+  resize: none;
 }
 
 h1,
@@ -3766,6 +3777,7 @@ footer .footer-img {
   width: 100%;
   border-radius: 0;
   padding: 12px 0;
+  margin-top: 10px;
   text-transform: uppercase;
   transition: 0.5s all ease;
   opacity: 1;
@@ -3775,6 +3787,8 @@ footer .footer-img {
 .contact-area .contact-right .contact-btn:hover {
   background-color: #343434;
 }
+
+
 
 .contact-area .contact-right .text-danger {
   font-size: 20px;
@@ -3787,6 +3801,22 @@ footer .footer-img {
   margin-top: 12px;
   color: #28a745;
 }
+
+.contact-area .contact-right .text-center{
+  color: #dc3545 !important;
+  font-weight: 400px !important;
+  font-size: 20px !important;
+ 
+}
+
+.containerContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 /*----- End Contact CSS -----*/
 /*----- Preloader CSS -----*/

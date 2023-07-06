@@ -20,17 +20,17 @@ const textTC = document.getElementById('textTC');
 const textPrivacy = document.getElementById('textPrivacy');
 
 //Contact
-const textLetGetInTouch = document.getElementById('textLetGetInTouch');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const phoneInput = document.getElementById('phone_number');
-const subjectInput = document.getElementById('msg_subject');
-const messageInput = document.getElementById('message');
-const textAccept = document.getElementById('textAccept');
-const textTermsCondition = document.getElementById('textTermsCondition');
-const textAnd = document.getElementById('textAnd');
-const textPrivacyPolicy = document.getElementById('textPrivacyPolicy');
-const textSendMessage = document.getElementById('textSendMessage');
+// const textLetGetInTouch = document.getElementById('textLetGetInTouch');
+// const nameInput = document.getElementById('name');
+// const emailInput = document.getElementById('email');
+// const phoneInput = document.getElementById('phone_number');
+// const subjectInput = document.getElementById('msg_subject');
+// const messageInput = document.getElementById('message');
+// const textAccept = document.getElementById('textAccept');
+// const textTermsCondition = document.getElementById('textTermsCondition');
+// const textAnd = document.getElementById('textAnd');
+// const textPrivacyPolicy = document.getElementById('textPrivacyPolicy');
+// const textSendMessage = document.getElementById('textSendMessage');
 
 
 
@@ -39,12 +39,12 @@ if (localStorage.getItem('language') === 'bm') {
   languageToggle.checked = true;
   updateNavbar('bm');
   updateFooter('bm');
-  updateContact('bm');
+  // updateContact('bm');
 } else {
   languageToggle.checked = false;
   updateNavbar('en');
   updateFooter('en');
-  updateContact('en');
+  // updateContact('en');
 }
 
 // Add event listener to the language toggle checkbox
@@ -106,30 +106,30 @@ function updateFooter(language) {
   }
 }
 
-function updateContact(language) {
-  if (language === 'bm') {
-    textLetGetInTouch.textContent = 'Hubungi Sekarang';
-    nameInput.placeholder = 'Nama';
-    emailInput.placeholder = 'Emel';
-    phoneInput.placeholder = 'No. Telefon';
-    subjectInput.placeholder = 'Subjek';
-    messageInput.placeholder = 'Mesej';
-    textAccept.textContent = 'Terima';
-    textTermsCondition.textContent = 'Terma & Syarat';
-    textAnd.textContent = 'Serta';
-    textPrivacyPolicy.textContent = 'Dasar Privasi.';
-    textSendMessage.textContent = 'Hantar mesej';
-  } else {
-    textLetGetInTouch.textContent = "Let's Get In Touch";
-    nameInput.placeholder = 'Name';
-    emailInput.placeholder = 'Email';
-    phoneInput.placeholder = 'Phone';
-    subjectInput.placeholder = 'Subject';
-    messageInput.placeholder = 'Message';
-    textAccept.textContent = 'Accept';
-    textTermsCondition.textContent = 'Terms & Conditions';
-    textAnd.textContentr = 'And';
-    textPrivacyPolicy.textContent = 'Privacy Policy.';
-    textSendMessage.textContent = 'Send Message';
-  }
-}
+// function updateContact(language) {
+//   if (language === 'bm') {
+//     textLetGetInTouch.textContent = 'Hubungi Sekarang';
+//     nameInput.placeholder = 'Nama';
+//     emailInput.placeholder = 'Emel';
+//     phoneInput.placeholder = 'No. Telefon';
+//     subjectInput.placeholder = 'Subjek';
+//     messageInput.placeholder = 'Mesej';
+//     textAccept.textContent = 'Terima';
+//     textTermsCondition.textContent = 'Terma & Syarat';
+//     textAnd.textContent = 'Serta';
+//     textPrivacyPolicy.textContent = 'Dasar Privasi.';
+//     textSendMessage.textContent = 'Hantar mesej';
+//   } else {
+//     textLetGetInTouch.textContent = "Let's Get In Touch";
+//     nameInput.placeholder = 'Name';
+//     emailInput.placeholder = 'Email';
+//     phoneInput.placeholder = 'Phone';
+//     subjectInput.placeholder = 'Subject';
+//     messageInput.placeholder = 'Message';
+//     textAccept.textContent = 'Accept';
+//     textTermsCondition.textContent = 'Terms & Conditions';
+//     textAnd.textContentr = 'And';
+//     textPrivacyPolicy.textContent = 'Privacy Policy.';
+//     textSendMessage.textContent = 'Send Message';
+//   }
+// }

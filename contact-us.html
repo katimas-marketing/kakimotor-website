@@ -31,7 +31,11 @@
     <link rel="icon" type="image/png" href="assets/img/favicon-01.png">
 
     <!-- Google Recaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+    
 
 </head>
 
@@ -59,56 +63,61 @@
             </a>
         </div>
 
-        <!-- Menu For Desktop Device -->
-        <div class="main-nav">
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo-01.png" alt="Logo" width="170" height="110" class="logo-one">
-                        <img src="assets/img/logo-two.png" class="logo-two" alt="Logo">
-                    </a>
-                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a href="/" class="nav-link" id="textHome">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="about-us" class="nav-link" id="textAbout">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="how-to-buy" class="nav-link" id="textHow">How to buy&nbsp;</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="our-bikes" class="nav-link" id="textOurBike">Our Bikes&nbsp;</a>
-                            </li>
-                            <li class="nav-item"> <a href="contact-us" class="nav-link" id="textContactUs">Contact
-                                    Us</a> </li>
-                            <li class="nav-item">&nbsp;</li>
+       <!-- Menu For Desktop Device -->
+       <div class="main-nav">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/">
+                    <img src="assets/img/logo-01.png" alt="Logo" width="170" height="110" class="logo-one">
+                    <img src="assets/img/logo-two.png" class="logo-two" alt="Logo">
+                </a>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link" id="textHome">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about-us" class="nav-link" id="textAbout">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="how-to-buy" class="nav-link" id="textHow">How to buy&nbsp;</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="our-bikes" class="nav-link" id="textOurBike">Our Bikes&nbsp;</a>
+                        </li>
+                        <li class="nav-item"> <a href="contact-us" class="nav-link" id="textContactUs">Contact Us</a> </li>
+                        <li class="nav-item">&nbsp;</li>
 
-                            <li class="nav-item" id="lang_switch">
-                                <div class="switch">
-                                    <input id="language-toggle" class="check-toggle check-toggle-round-flat"
-                                        type="checkbox">
-                                    <label for="language-toggle"></label>
-                                    <span class="on">EN</span>
-                                    <span class="off">BM</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
+                        <li class="nav-item" id="lang_switch">
+                            <div class="switch">
+                                <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                                <label for="language-toggle"></label>
+                                <span class="on">EN</span>
+                                <span class="off">BM</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </div>
-    <!-- End Navbar Area -->
+</div>
+<!-- End Navbar Area -->
 
     <!-- Page Title -->
     <section class="page-title-area pt-5 pb-5"></section>
+    <!--
+        <div class="page-title-area">
+
+            <div class="container"> </div>
+        </div>
+-->
+    <!-- End Page Title -->
 
     <!-- Contact Area -->
     <section class="contact-area pt-100 pb-70">
-        <div class="container">
+        <div class="containerContact">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="contact-item contact-left">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.350330409486!2d110.33310087587701!3d1.5543038608826694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7a9b578d947%3A0xb0b0f652e508d15c!2sKAKI%20MOTOR%20(K%20Trading)!5e0!3m2!1sen!2smy!4v1679625432946!5m2!1sen!2smy"
@@ -132,94 +141,6 @@
                                     +60 18-203 7544 </a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-
-                    <div id="ff-compose"></div>
-
-                    <div class="contact-item contact-right">
-                        <h3 id="textLetGetInTouch">Let's Get In Touch</h3>
-
-                        <!-- ==============================
-                        The Contact Form Start Here
-                        ============================== -->
-                        <form id="subscribeForm" action="/" method="POST">
-                            <div class="row">
-
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control" required
-                                            data-error="Please enter your name" placeholder="Name">
-                                        <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="nameError"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-6">
-                                    <div class="form-group">
-                                        <input type="email" name="email" id="email" class="form-control" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
-                                        data-error="Please enter your email" placeholder="Email">
-                                        <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="emailError"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required pattern="[0-9]{10}"
-                                            data-error="Please enter your number" class="form-control"
-                                            placeholder="Phone">
-                                        <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="phoneError"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8"
-                                            required data-error="Write your message" placeholder="Message"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="messageError"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="form-group">
-                                        <div class="form-check agree-label">
-                                            <input name="gridCheck" value="I agree to the terms and privacy policy."
-                                                class="form-check-input" type="checkbox" id="gridCheck" required>
-                                            <label class="form-check-label" for="gridCheck">
-                                                <span id="textAccept">Accept</span> <a href="/"><span id="textTermsCondition">Terms & Conditions</span></a> <span id="textAnd">And</span> <a
-                                                    href="/"><span id="textPrivacyPolicy">Privacy Policy.</span></a>
-                                            </label>
-                                            <div class="help-block with-errors gridCheck-error"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" name="recaptcha_token" id="recaptcha_token" />
-
-                                <div class="col-md-12 col-lg-12">
-
-                                    <button class="contact-btn btn g-recaptcha"
-                                        data-sitekey="6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_" data-callback='onSubmit'
-                                        data-action='submit'>Submit</button>
-
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    <div id="success-message" style="display: none; color: #ea5b0c;">
-                                        Message sent successfully!
-                                    </div>
-                                    <div class="clearfix"></div>
-
-                                </div>
-                            </div>
-
-                        </form>
-                        <!-- ==============================
-                        The Contact Form End Here
-                        ============================== -->
-
                     </div>
                 </div>
             </div>
@@ -382,77 +303,8 @@
     <!-- Language-switch JS -->
     <script src="assets/js/language-switch-contact.js"></script>
 
-    <script>
-         document.getElementById('phone_number').addEventListener('input', function (e) {
-         e.target.value = e.target.value.replace(/[^0-9]/g, ''); 
-        });
 
-        document.getElementById('email').addEventListener('input', function (e) {
-         e.target.value = e.target.value.replace(/[^\s@]+@[^\s@]+\.[^\s@]+/, ''); 
-        });
-
-        grecaptcha.ready(() => {
-            console.log('grecaptcha is ready');
-        })
-
-        function serializeForm(formData) {
-            var data = JSON.stringify(formData)
-            return data
-        }
-
-        function sendData(formValue, quiet = false) {
-            
-            $.ajax({
-                url: 'http://localhost:3535/form',
-                type: 'POST',
-                data: formValue,
-                success: function (data) {
-                    // handle the response from the server
-                    console.log('Success:', data);
-                    $('#success-message').show();
-                    alert('Form Successfully Submit, We will Contact you soon')
-                    resetForm()
-                },
-                error: function (xhr, status, error) {
-                    if (!quiet) {
-                        console.error('An error occurred:', error);
-                        alert('From Unsuccessfully send. Please try again.')
-                    }
-                }
-            });
-        }
-
-        function resetForm() {
-            $(':input', '#subscribeForm')
-                .not(':button, :submit, :reset, :hidden')
-                .val('')
-                .prop('checked', false)
-                .prop('selected', false);
-        }
-
-        function onSubmit(token, quiet = false) {
-           
-
-            var form = $('#subscribeForm')
-            var formValue = form.serialize()
-            grecaptcha.ready(() => {
-                console.log('grecaptcha is ready')
-                $('#token').remove()
-                grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-                    form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`)
-                    sendData(formValue, quiet)
-                }).catch((error) => {
-                    console.log('an error occured executing grecaptcha', error)
-                })
-            })
-        }
-
-        $(document).ready(() => {
-            onSubmit('test', true)
-        })
-    </script>
-
-
+    
 </body>
 
 </html>

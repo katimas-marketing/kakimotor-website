@@ -382,6 +382,7 @@
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
     <script src="assets/js/language-switch-contact.js"></script>
+    
 
     <script>
          document.getElementById('phone_number').addEventListener('input', function (e) {
@@ -390,35 +391,30 @@
 
         //To validate Email
         function validateForm() {
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const emailInput = document.getElementById('email');
-  const isValidEmail = emailRegex.test(emailInput.value);
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const emailInput = document.getElementById('email');
+        const isValidEmail = emailRegex.test(emailInput.value);
 
-  if (!isValidEmail) {
-    emailInput.classList.add('invalid-email');
-    return false; // Prevent form submission
-  } else {
-    emailInput.classList.remove('invalid-email');
-    return true; // Allow form submission
-  }
-}
+        if (!isValidEmail) {
+            emailInput.classList.add('invalid-email');
+            return false; // Prevent form submission
+        } else {
+            emailInput.classList.remove('invalid-email');
+            return true; // Allow form submission
+        }
+        }
 
-document.getElementById('email').addEventListener('input', function (e) {
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const emailInput = e.target;
-  const isValidEmail = emailRegex.test(emailInput.value);
+        document.getElementById('email').addEventListener('input', function (e) {
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const emailInput = e.target;
+        const isValidEmail = emailRegex.test(emailInput.value);
 
-  if (!isValidEmail) {
-    emailInput.classList.add('invalid-email');
-  } else {
-    emailInput.classList.remove('invalid-email');
-  }
-});
-
-
-
-      
-
+        if (!isValidEmail) {
+            emailInput.classList.add('invalid-email');
+        } else {
+            emailInput.classList.remove('invalid-email');
+        }
+        });
 
         grecaptcha.ready(() => {
             console.log('grecaptcha is ready');
@@ -432,7 +428,7 @@ document.getElementById('email').addEventListener('input', function (e) {
         function sendData(formValue, quiet = false) {
             
             $.ajax({
-                url: 'http://localhost:3535/form',
+                url: 'https://scripts.katimas.brixmind.com/form', 
                 type: 'POST',
                 data: formValue,
                 success: function (data) {

@@ -147,7 +147,7 @@
                         <form id="subscribeForm" action="/" method="POST">
                             <div class="row">
 
-                                <div class="col-sm-6 col-lg-6">
+                                <div class="col-sm-6 col-lg-12">
                                     <div class="form-group">
                                         <input type="text" name="name" id="name" class="form-control" required
                                             data-error="Please enter your name" placeholder="Name">
@@ -165,11 +165,11 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-12 col-lg-12">
+                                <div class="col-md-12 col-lg-6">
                                     <div class="form-group">
-                                        <input type="number" name="phone" id="phone" required pattern="[0-9]{10}"
+                                        <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}"
                                             data-error="Please enter your number" class="form-control"
-                                            placeholder="Phone">
+                                            placeholder="Phone" input mode="numeric">
                                         <div class="help-block with-errors"></div>
                                         <div class="error-message" id="phoneError" style="color: red;"></div>
                                     </div>
@@ -184,7 +184,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-12 col-md-12">
+                                <!-- <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <div class="form-check agree-label">
                                             <input name="gridCheck" value="I agree to the terms and privacy policy."
@@ -196,7 +196,7 @@
                                             <div class="help-block with-errors gridCheck-error"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="col-md-12 col-lg-12">
 
@@ -205,15 +205,16 @@
                                         data-action='submit'>Submit</button>
 
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    <div id="success-message" style="display: none; color: #ea5b0c;">
-                                        Message sent successfully!
-                                    </div>
                                     <div class="clearfix"></div>
 
                                 </div>
                             </div>
 
                         </form>
+
+                        <div id="success-message" style="display: none; color: #ea5b0c; border: 1px solid #ea5b0c; padding: 20px">
+                            Thanks for contacting us! We will be in touch with you shortly.
+                        </div>
                         <!-- ==============================
                         The Contact Form End Here
                         ============================== -->
@@ -387,6 +388,7 @@
             console.log('grecaptcha is ready');
         })
 
+
         function displayErrorMessage(inputFieldId, errorMessage) {
             const errorElement = document.getElementById(`${inputFieldId}Error`);
         if (errorElement) {
@@ -401,6 +403,7 @@
         const emailInput = document.getElementById('email');
         const phoneInput = document.getElementById('phone');
         const messageInput = document.getElementById('message');
+
 
         if (nameInput.value.trim() === '') {
             displayErrorMessage('name', 'This field is required.');
@@ -437,7 +440,14 @@
         return isValid;
     }
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const phoneInput = document.getElementById('phone');
 
+        phoneInput.addEventListener('input', function () {
+            // Remove non-numeric characters from the input
+            phoneInput.value = phoneInput.value.replace(/\D/g, '');
+        });
+    });
 
         function serializeForm(formData) {
             var data = JSON.stringify(formData)
@@ -447,15 +457,18 @@
         function sendData(formValue, quiet = false) {
             
             $.ajax({
-                url: 'https://scripts.katimas.brixmind.com/form',  
+                url: 'https://scripts.katimas.brixmind.com/form',   
                 type: 'POST',
                 data: formValue,
                 success: function (data) {
+
                     // handle the response from the server
                     console.log('Success:', data);
-                    $('#success-message').show();
+                    // $('#success-message').show();
                     alert('Form Successfully Submit, We will Contact you soon')
-                    resetForm()
+                    $('#subscribeForm').hide(); // Hide the form
+                    $('#success-message').show(); // Show the success message
+                    resetForm(); // You might also want to reset the form here
                 },
                 error: function (xhr, status, error) {
                     if (!quiet) {
@@ -465,6 +478,7 @@
         }
         });
         }
+
 
         function resetForm() {
             $(':input', '#subscribeForm')

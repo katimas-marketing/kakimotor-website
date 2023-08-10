@@ -152,7 +152,7 @@
                                         <input type="text" name="name" id="name" class="form-control" required
                                             data-error="Please enter your name" placeholder="Name">
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="nameError"></div>
+                                        <div class="error-message" id="nameError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -161,8 +161,7 @@
                                         <input type="email" name="email" id="email" class="form-control" 
                                         data-error="Please enter your email" placeholder="Email">
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="emailError"></div>
-                                        <div class="error-message" id="emailError"></div>
+                                        <div class="error-message" id="emailError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -172,7 +171,7 @@
                                             data-error="Please enter your number" class="form-control"
                                             placeholder="Phone">
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="phoneError"></div>
+                                        <div class="error-message" id="phoneError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -181,7 +180,7 @@
                                         <textarea name="message" class="form-control" id="message" cols="30" rows="8"
                                             required data-error="Write your message" placeholder="Message"></textarea>
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="messageError"></div>
+                                        <div class="error-message" id="messageError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -198,8 +197,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <input type="hidden" name="recaptcha_token" id="recaptcha_token" />
 
                                 <div class="col-md-12 col-lg-12">
 
@@ -385,40 +382,62 @@
     
 
     <script>
-         document.getElementById('phone').addEventListener('input', function (e) {
-         e.target.value = e.target.value.replace(/[^0-9]/g, ''); 
-        });
-
-        //To validate Email
-        function validateForm() {
-        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        const emailInput = document.getElementById('email');
-        const isValidEmail = emailRegex.test(emailInput.value);
-
-        if (!isValidEmail) {
-            emailInput.classList.add('invalid-email');
-            return false; // Prevent form submission
-        } else {
-            emailInput.classList.remove('invalid-email');
-            return true; // Allow form submission
-        }
-        }
-
-        document.getElementById('email').addEventListener('input', function (e) {
-        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        const emailInput = e.target;
-        const isValidEmail = emailRegex.test(emailInput.value);
-
-        if (!isValidEmail) {
-            emailInput.classList.add('invalid-email');
-        } else {
-            emailInput.classList.remove('invalid-email');
-        }
-        });
 
         grecaptcha.ready(() => {
             console.log('grecaptcha is ready');
         })
+
+        function displayErrorMessage(inputFieldId, errorMessage) {
+            const errorElement = document.getElementById(`${inputFieldId}Error`);
+        if (errorElement) {
+            errorElement.textContent = errorMessage;
+        }
+        }
+
+        function validateForm() {
+        let isValid = true;
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const messageInput = document.getElementById('message');
+
+        if (nameInput.value.trim() === '') {
+            displayErrorMessage('name', 'This field is required.');
+            isValid = false;
+        } else {
+            displayErrorMessage('name', ''); // Clear error message
+        }
+
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (emailInput.value.trim() === '') {
+            displayErrorMessage('email', 'This field is required.');
+            isValid = false;
+        } else if (!emailRegex.test(emailInput.value)) {
+            displayErrorMessage('email', 'Invalid email format.');
+            isValid = false;
+        } else {
+            displayErrorMessage('email', ''); // Clear error message
+        }
+
+        if (phoneInput.value.trim() === '') {
+            displayErrorMessage('phone', 'This field is required.');
+            isValid = false;
+        } else {
+            displayErrorMessage('phone', ''); // Clear error message
+        }
+
+        if (messageInput.value.trim() === '') {
+            displayErrorMessage('message', 'This field is required.');
+            isValid = false;
+        } else {
+            displayErrorMessage('message', ''); // Clear error message
+        }
+
+        return isValid;
+    }
+
+
 
         function serializeForm(formData) {
             var data = JSON.stringify(formData)
@@ -428,7 +447,7 @@
         function sendData(formValue, quiet = false) {
             
             $.ajax({
-                url: 'https://scripts.katimas.brixmind.com/form', 
+                url: 'https://scripts.katimas.brixmind.com/form',  
                 type: 'POST',
                 data: formValue,
                 success: function (data) {
@@ -443,8 +462,8 @@
                         console.error('An error occurred:', error);
                         alert('From Unsuccessfully send. Please try again.')
                     }
-                }
-            });
+        }
+        });
         }
 
         function resetForm() {
@@ -456,25 +475,29 @@
         }
 
         function onSubmit(token, quiet = false) {
-           
-
             var form = $('#subscribeForm')
             var formValue = form.serialize()
-            grecaptcha.ready(() => {
-                console.log('grecaptcha is ready')
-                $('#token').remove()
+
+            if(validateForm()) {
                 grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-                    form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`)
-                    sendData(formValue, quiet)
-                }).catch((error) => {
-                    console.log('an error occured executing grecaptcha', error)
-                })
-            })
+                var form = $('#subscribeForm'); 
+                form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
+                sendData(formValue, quiet);
+            }).catch((error) => {
+                console.log('an error occurred executing grecaptcha', error);
+            });
+
+            }
         }
 
         $(document).ready(() => {
-            onSubmit('test', true)
-        })
+            grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
+            var form = $('#subscribeForm'); 
+            form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
+        }).catch((error) => {
+            console.log('an error occurred executing grecaptcha', error);
+        });
+    })
     </script>
 
 

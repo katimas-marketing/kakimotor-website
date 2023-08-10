@@ -168,7 +168,7 @@
 
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required pattern="[0-9]{10}"
+                                        <input type="number" name="phone" id="phone" required pattern="[0-9]{10}"
                                             data-error="Please enter your number" class="form-control"
                                             placeholder="Phone">
                                         <div class="help-block with-errors"></div>
@@ -385,7 +385,7 @@
     
 
     <script>
-         document.getElementById('phone_number').addEventListener('input', function (e) {
+         document.getElementById('phone').addEventListener('input', function (e) {
          e.target.value = e.target.value.replace(/[^0-9]/g, ''); 
         });
 

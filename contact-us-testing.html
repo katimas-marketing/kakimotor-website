@@ -116,9 +116,10 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <ul>
                             <li>
-                                <a href="https://goo.gl/maps/j6L4UribRCZ7dCRb9"><i class='bx bx-location-plus'></i> LOT 442, Ground Floor Section 11, KTLD, Jln Kulas,
-                                Kampung Bandarshah, <br>
-                                &nbsp; &nbsp; &nbsp; &nbsp;93400 Kuching, Sarawak
+                                <a href="https://goo.gl/maps/j6L4UribRCZ7dCRb9"><i class='bx bx-location-plus'></i> LOT
+                                    442, Ground Floor Section 11, KTLD, Jln Kulas,
+                                    Kampung Bandarshah, <br>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;93400 Kuching, Sarawak
                             </li></a>
                             <li>
                                 <i class='bx bx-mail-send'></i>
@@ -158,8 +159,8 @@
 
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" class="form-control" 
-                                        data-error="Please enter your email" placeholder="Email">
+                                        <input type="email" name="email" id="email" class="form-control"
+                                            data-error="Please enter your email" placeholder="Email">
                                         <div class="help-block with-errors"></div>
                                         <div class="error-message" id="emailError" style="color: red;"></div>
                                     </div>
@@ -212,8 +213,13 @@
 
                         </form>
 
-                        <div id="success-message" style="display: none; color: #ea5b0c; border: 1px solid #ea5b0c; padding: 20px">
+                        <div id="success-message"
+                            style="display: none; color: #ea5b0c; border: 1px solid #ea5b0c; padding: 20px">
                             Thanks for contacting us! We will be in touch with you shortly.
+                        </div>
+
+                        <div id="Unsuccessfully-message" style="display: none; color: red;">
+                            From Unsuccessfully send. Please try again.
                         </div>
                         <!-- ==============================
                         The Contact Form End Here
@@ -299,16 +305,18 @@
                             <div class="footer-service footer-find">
                                 <h3 id="textFindUs">Find Us</h3>
                                 <ul>
-                                    <a href="https://goo.gl/maps/j6L4UribRCZ7dCRb9"><li>
-                                        <i class="bx bx-location-plus"></i>
-                                        LOT 442, Ground Floor Section 11, KTLD, Jln Kulas, Kampung Bandarshah, 93400
-                                        Kuching, Sarawak
-                                    </li></a><br>
+                                    <a href="https://goo.gl/maps/j6L4UribRCZ7dCRb9">
+                                        <li>
+                                            <i class="bx bx-location-plus"></i>
+                                            LOT 442, Ground Floor Section 11, KTLD, Jln Kulas, Kampung Bandarshah, 93400
+                                            Kuching, Sarawak
+                                        </li>
+                                    </a><br>
 
 
                                     <li>
                                         <i class="bx bx-phone-call"></i>
-                                         <a href="https://api.whatsapp.com/send?phone=60182037544">
+                                        <a href="https://api.whatsapp.com/send?phone=60182037544">
                                             +60 18-203 7544
                                         </a>
                                     </li>
@@ -380,7 +388,7 @@
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
     <script src="assets/js/language-switch-contact.js"></script>
-    
+
 
     <script>
 
@@ -391,63 +399,63 @@
 
         function displayErrorMessage(inputFieldId, errorMessage) {
             const errorElement = document.getElementById(`${inputFieldId}Error`);
-        if (errorElement) {
-            errorElement.textContent = errorMessage;
-        }
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
         }
 
         function validateForm() {
-        let isValid = true;
+            let isValid = true;
 
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const phoneInput = document.getElementById('phone');
-        const messageInput = document.getElementById('message');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const messageInput = document.getElementById('message');
 
 
-        if (nameInput.value.trim() === '') {
-            displayErrorMessage('name', 'This field is required.');
-            isValid = false;
-        } else {
-            displayErrorMessage('name', ''); // Clear error message
+            if (nameInput.value.trim() === '') {
+                displayErrorMessage('name', 'This field is required.');
+                isValid = false;
+            } else {
+                displayErrorMessage('name', ''); // Clear error message
+            }
+
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (emailInput.value.trim() === '') {
+                displayErrorMessage('email', 'This field is required.');
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.value)) {
+                displayErrorMessage('email', 'Invalid email format.');
+                isValid = false;
+            } else {
+                displayErrorMessage('email', ''); // Clear error message
+            }
+
+            if (phoneInput.value.trim() === '') {
+                displayErrorMessage('phone', 'This field is required.');
+                isValid = false;
+            } else {
+                displayErrorMessage('phone', ''); // Clear error message
+            }
+
+            if (messageInput.value.trim() === '') {
+                displayErrorMessage('message', 'This field is required.');
+                isValid = false;
+            } else {
+                displayErrorMessage('message', ''); // Clear error message
+            }
+
+            return isValid;
         }
 
-        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (emailInput.value.trim() === '') {
-            displayErrorMessage('email', 'This field is required.');
-            isValid = false;
-        } else if (!emailRegex.test(emailInput.value)) {
-            displayErrorMessage('email', 'Invalid email format.');
-            isValid = false;
-        } else {
-            displayErrorMessage('email', ''); // Clear error message
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const phoneInput = document.getElementById('phone');
 
-        if (phoneInput.value.trim() === '') {
-            displayErrorMessage('phone', 'This field is required.');
-            isValid = false;
-        } else {
-            displayErrorMessage('phone', ''); // Clear error message
-        }
-
-        if (messageInput.value.trim() === '') {
-            displayErrorMessage('message', 'This field is required.');
-            isValid = false;
-        } else {
-            displayErrorMessage('message', ''); // Clear error message
-        }
-
-        return isValid;
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const phoneInput = document.getElementById('phone');
-
-        phoneInput.addEventListener('input', function () {
-            // Remove non-numeric characters from the input
-            phoneInput.value = phoneInput.value.replace(/\D/g, '');
+            phoneInput.addEventListener('input', function () {
+                // Remove non-numeric characters from the input
+                phoneInput.value = phoneInput.value.replace(/\D/g, '');
+            });
         });
-    });
 
         function serializeForm(formData) {
             var data = JSON.stringify(formData)
@@ -455,28 +463,26 @@
         }
 
         function sendData(formValue, quiet = false) {
-            
+
             $.ajax({
-                url: 'https://scripts.katimas.brixmind.com/form',   
+                url: 'https://scripts.katimas.brixmind.com/form',
                 type: 'POST',
                 data: formValue,
                 success: function (data) {
 
                     // handle the response from the server
                     console.log('Success:', data);
-                    // $('#success-message').show();
-                    alert('Form Successfully Submit, We will Contact you soon')
                     $('#subscribeForm').hide(); // Hide the form
                     $('#success-message').show(); // Show the success message
-                    resetForm(); // You might also want to reset the form here
+                    resetForm();
                 },
                 error: function (xhr, status, error) {
                     if (!quiet) {
                         console.error('An error occurred:', error);
-                        alert('From Unsuccessfully send. Please try again.')
+                        $('#Unsuccessfully-message').show(); // Show the unsuccessfully message
                     }
-        }
-        });
+                }
+            });
         }
 
 
@@ -492,26 +498,26 @@
             var form = $('#subscribeForm')
             var formValue = form.serialize()
 
-            if(validateForm()) {
+            if (validateForm()) {
                 grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-                var form = $('#subscribeForm'); 
-                form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
-                sendData(formValue, quiet);
-            }).catch((error) => {
-                console.log('an error occurred executing grecaptcha', error);
-            });
+                    var form = $('#subscribeForm');
+                    form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
+                    sendData(formValue, quiet);
+                }).catch((error) => {
+                    console.log('an error occurred executing grecaptcha', error);
+                });
 
             }
         }
 
         $(document).ready(() => {
             grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-            var form = $('#subscribeForm'); 
-            form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
-        }).catch((error) => {
-            console.log('an error occurred executing grecaptcha', error);
-        });
-    })
+                var form = $('#subscribeForm');
+                form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
+            }).catch((error) => {
+                console.log('an error occurred executing grecaptcha', error);
+            });
+        })
     </script>
 
 

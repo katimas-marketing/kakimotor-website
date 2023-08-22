@@ -66,8 +66,8 @@ function updateNavbar(language) {
   if (language === 'bm') {
     textHome.textContent = 'Laman Utama';
     textAbout.textContent = 'Tentang Kami';
-    textHow.textContent = 'Process Membeli Motor';
-    textOurBike.textContent = 'Motorsikal Kami';
+    textHow.textContent = 'Proses Membeli Motor';
+    textOurBike.textContent = 'Motosikal Kami';
     textContactUs.textContent = 'Hubungi Kami';
   } else {
     textHome.textContent = 'Home';
@@ -84,8 +84,8 @@ function updateFooter(language) {
     textQuickLink.textContent = 'Pautan Pantas';
     textHomeF.textContent = 'Laman Utama';
     textAboutF.textContent = 'Tentang Kami';
-    textHowF.textContent = 'Process Membeli Motor';
-    textOurBikeF.textContent = 'Motorsikal Kami';
+    textHowF.textContent = 'Proses Membeli Motor';
+    textOurBikeF.textContent = 'Motosikal Kami';
     textContactUsF.textContent = 'Hubungi Kami';
     textFindUs.textContent = 'Ikuti Kami Di';
     textTC.textContent = 'Terma dan Syarat';

@@ -19,21 +19,6 @@ const textFindUs = document.getElementById('textFindUs');
 const textTC = document.getElementById('textTC');
 const textPrivacy = document.getElementById('textPrivacy');
 
-//Contact
-// const textLetGetInTouch = document.getElementById('textLetGetInTouch');
-// const nameInput = document.getElementById('name');
-// const emailInput = document.getElementById('email');
-// const phoneInput = document.getElementById('phone_number');
-// const subjectInput = document.getElementById('msg_subject');
-// const messageInput = document.getElementById('message');
-// const textAccept = document.getElementById('textAccept');
-// const textTermsCondition = document.getElementById('textTermsCondition');
-// const textAnd = document.getElementById('textAnd');
-// const textPrivacyPolicy = document.getElementById('textPrivacyPolicy');
-// const textSendMessage = document.getElementById('textSendMessage');
-
-
-
 // Check the current language preference and update the switch accordingly
 if (localStorage.getItem('language') === 'bm') {
   languageToggle.checked = true;
@@ -66,8 +51,8 @@ function updateNavbar(language) {
   if (language === 'bm') {
     textHome.textContent = 'Laman Utama';
     textAbout.textContent = 'Tentang Kami';
-    textHow.textContent = 'Process Membeli Motor';
-    textOurBike.textContent = 'Motorsikal Kami';
+    textHow.textContent = 'Proses Membeli Motor';
+    textOurBike.textContent = 'Motosikal Kami';
     textContactUs.textContent = 'Hubungi Kami';
   } else {
     textHome.textContent = 'Home';
@@ -85,7 +70,7 @@ function updateFooter(language) {
     textHomeF.textContent = 'Laman Utama';
     textAboutF.textContent = 'Tentang Kami';
     textHowF.textContent = 'Process Membeli Motor';
-    textOurBikeF.textContent = 'Motorsikal Kami';
+    textOurBikeF.textContent = 'Motosikal Kami';
     textContactUsF.textContent = 'Hubungi Kami';
     textFindUs.textContent = 'Ikuti Kami Di';
     textTC.textContent = 'Terma dan Syarat';
@@ -106,30 +91,3 @@ function updateFooter(language) {
   }
 }
 
-// function updateContact(language) {
-//   if (language === 'bm') {
-//     textLetGetInTouch.textContent = 'Hubungi Sekarang';
-//     nameInput.placeholder = 'Nama';
-//     emailInput.placeholder = 'Emel';
-//     phoneInput.placeholder = 'No. Telefon';
-//     subjectInput.placeholder = 'Subjek';
-//     messageInput.placeholder = 'Mesej';
-//     textAccept.textContent = 'Terima';
-//     textTermsCondition.textContent = 'Terma & Syarat';
-//     textAnd.textContent = 'Serta';
-//     textPrivacyPolicy.textContent = 'Dasar Privasi.';
-//     textSendMessage.textContent = 'Hantar mesej';
-//   } else {
-//     textLetGetInTouch.textContent = "Let's Get In Touch";
-//     nameInput.placeholder = 'Name';
-//     emailInput.placeholder = 'Email';
-//     phoneInput.placeholder = 'Phone';
-//     subjectInput.placeholder = 'Subject';
-//     messageInput.placeholder = 'Message';
-//     textAccept.textContent = 'Accept';
-//     textTermsCondition.textContent = 'Terms & Conditions';
-//     textAnd.textContentr = 'And';
-//     textPrivacyPolicy.textContent = 'Privacy Policy.';
-//     textSendMessage.textContent = 'Send Message';
-//   }
-// }

@@ -76,7 +76,7 @@ function updateFooter(language) {
     textHomeF.textContent = 'Laman Utama';
     textAboutF.textContent = 'Tentang Kami';
     textHowF.textContent = 'Process Membeli Motor';
-    textOurBikeF.textContent = 'Motorsikal Kami';
+    textOurBikeF.textContent = 'Motosikal Kami';
     textContactUsF.textContent = 'Hubungi Kami';
     textFindUs.textContent = 'Ikuti Kami Di';
     textTC.textContent = 'Terma dan Syarat';

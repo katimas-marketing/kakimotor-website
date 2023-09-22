@@ -26,7 +26,13 @@
     <!-- Theme Dark CSS -->
     <link rel="stylesheet" href="assets/css/theme-dark.css">
 
-    <title>KAKI MOTOR</title>
+    <meta name="keywords" content="Motor">
+    <meta name="description" content="Kaki Motor Kuching offer a wide variety of Mototcycles, flexible financing options 
+    and we also a motorbike dealer in kuching. Kuching city's newest hotspot for authorized Yamaha and Honda motorbikes.">
+    <meta name="description" lang="ms" content="Kaki Motor Kuching menawarkan pelbagai jenis Mototcycles, pilihan 
+    pembiayaan yang fleksibel dan kami juga pengedar motosikal di kuching. Tempat panas terbaharu bandar raya Kuching untuk motosikal Yamaha dan Honda.">
+
+    <title>How to Buy | KAKI MOTOR | Kuching Motorbike Dealership</title>
 
     <link rel="icon" type="image/png" href="assets/img/favicon-01.png">
 
@@ -42,7 +48,6 @@
 
         gtag('config', 'G-0Y3XMFTSC9');
     </script>
-
 </head>
 
 <body>
@@ -65,7 +70,7 @@
         <!-- Menu For Mobile Device -->
         <div class="mobile-nav">
             <a href="/" class="logo">
-                <img src="assets/img/logo.png" alt="Logo">
+                <img src="assets/img/logo.png" alt="Kaki Motor Logo">
             </a>
         </div>
 
@@ -74,8 +79,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo-01.png" alt="Logo" width="170" height="110" class="logo-one">
-                        <img src="assets/img/logo-two.png" class="logo-two" alt="Logo">
+                        <img src="assets/img/logo-01.png" alt="Kaki Motor Logo" width="170" height="110" class="logo-one">
+                        <img src="assets/img/logo-two.png" class="logo-two" alt="Kaki Motor Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -251,7 +256,7 @@
                         <div class="footer-item">
                             <div class="footer-logo">
                                 <a href="/">
-                                    <img src="assets/img/logo-two.png" alt="Logo" width="170">
+                                    <img src="assets/img/logo-two.png" alt="Kaki Motor Logo" width="170">
                                 </a>
                                 <p id="textFooterAdd">We are dedicated to providing our customers with the best possible
                                     experience when
@@ -473,7 +478,8 @@
         function sendData(formValue, quiet = false) {
 
             $.ajax({
-                url: 'https://scripts.katimas.brixmind.com/form',
+                // url: 'https://scripts.katimas.brixmind.com/form',
+                url: 'http://localhost:3535/form',
                 type: 'POST',
                 data: formValue,
                 success: function (data) {

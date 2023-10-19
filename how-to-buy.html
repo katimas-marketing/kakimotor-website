@@ -26,14 +26,20 @@
     <link rel="stylesheet" href="assets/css/theme-dark.css">
 
     <meta name="keywords" content="Motor">
-    <meta name="description" content="Kaki Motor Kuching offer a wide variety of Mototcycles, flexible financing options 
+    <meta name="description"
+        content="Kaki Motor Kuching offer a wide variety of Mototcycles, flexible financing options 
     and we also a motorbike dealer in kuching. Kuching city's newest hotspot for authorized Yamaha and Honda motorbikes.">
-    <meta name="description" lang="ms" content="Kaki Motor Kuching menawarkan pelbagai jenis Mototcycles, pilihan 
+    <meta name="description" lang="ms"
+        content="Kaki Motor Kuching menawarkan pelbagai jenis Mototcycles, pilihan 
     pembiayaan yang fleksibel dan kami juga pengedar motosikal di kuching. Tempat panas terbaharu bandar raya Kuching untuk motosikal Yamaha dan Honda.">
 
     <title>How to Buy | KAKI MOTOR | Kuching Motorbike Dealership</title>>
 
     <link rel="icon" type="image/png" href="assets/img/favicon-01.png">
+
+    <!-- Google Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y3XMFTSC9"></script>
     <script>
@@ -74,7 +80,8 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo-01.png" alt="Kaki Motor Logo" width="170" height="110" class="logo-one">
+                        <img src="assets/img/logo-01.png" alt="Kaki Motor Logo" width="170" height="110"
+                            class="logo-one">
                         <img src="assets/img/logo-two.png" class="logo-two" alt="Kaki Motor Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -129,11 +136,13 @@
                                     <button class="btnLang" id="engButton">BM Version -></button>
                                     <div class="service-details-slider owl-theme owl-carousel">
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_en.jpg" alt="Easy steps to own dream bike">
+                                            <img id="changeImage" src="assets/img/how_en.jpg"
+                                                alt="Easy steps to own dream bike">
                                         </div>
 
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_bm.jpg" alt="Easy steps to own dream bike">
+                                            <img id="changeImage" src="assets/img/how_bm.jpg"
+                                                alt="Easy steps to own dream bike">
                                         </div>
                                     </div>
                         </div>
@@ -148,6 +157,110 @@
             </div>
         </div>
     </div>
+
+    <!--start question area-->
+    <section class="question-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="question-content">
+                        <h2 id="ApplyNowWithUs">Apply Now with Us</h2>
+                        <p id="ApplyingDreamMotorcycle">Applying for your dream motorcycle is so easy, just fill out our online
+                            application form and submit! Our team of experts will review your application promptly, and
+                            you'll receive a response in no time.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="question-contact-form">
+                        <form id="buyForm" method="POST" class="contact-form r0w m0 js-ajax-form">
+                            <div class="formbold-mb-3">
+                                <label for="brand" class="formbold-form-label" id="MotorcycleBrand">
+                                    Motorcycle Brand: </label>
+                                <select class="formbold-form-input-option" name="brand" id="brand">
+                                    <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    </option>
+                                    <option value="Yamaha" id="Yamaha">Yamaha</option>
+                                    <option value="Honda" id="Honda">Honda</option>
+                                </select>
+                                <div class="error-message" id="brandError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="model" class="formbold-form-label" id="MotorcycleModel">
+                                    Motorcycle Model: </label>
+                                <select class="formbold-form-input-option" name="model" id="model">
+                                    <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    </option>
+                                    <option value="" disabled id="yamaha" class="TheBrand">---------- YAMAHA
+                                        ---------------</option>
+                                    <option value="Yamaha 135LC V8">Yamaha 135LC V8</option>
+                                    <option value="Yamaha Ego Avantiz">Yamaha Ego Avantiz</option>
+                                    <option value="Yamaha EZ115">Yamaha EZ115</option>
+                                    <option value="Yamaha N MAX">Yamaha N MAX</option>
+                                    <option value="Yamaha NVX ABS">Yamaha NVX ABS</option>
+                                    <option value="Yamaha NVX STD">Yamaha NVX STD</option>
+                                    <option value="Yamaha Y15ZR">Yamaha Y15ZR</option>
+                                    <option value="Yamaha Y16ZR">Yamaha Y16ZR</option>
+                                    <option value="" disabled id="Honda" class="TheBrand">---------- HONDA
+                                        ---------------</option>
+                                    <option value="Honda Wave 110">Honda Wave 110</option>
+                                    <option value="Honda Vario 160">Honda Vario 160</option>
+                                    <option value="Honda RS-X 150">Honda RS-X 150</option>
+                                    <option value="Honda RS150R">Honda RS150R</option>
+                                    <option value="Honda ADV 160">Honda ADV 160</option>
+                                    <option value="Honda ADV 150">Honda ADV 150</option>
+                                </select>
+                                <div class="error-message" id="modelError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="name" class="formbold-form-label" id="NameAs"> Name as In
+                                    NRIC: </label>
+                                <input type="text" name="name" id="name" placeholder="ex: John Doe"
+                                    class="formbold-form-input" />
+                                <div class="error-message" id="nameError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="phone" class="formbold-form-label" id="Mobile"> Mobile
+                                    Contact No.: </label>
+                                <input type="text" name="phone" id="phone" placeholder="ex: 0123456789"
+                                    class="formbold-form-input" inputmode="numeric" />
+                                <div class="error-message" id="phoneError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="email" class="formbold-form-label" id="Email">
+                                    Email:</label>
+                                <input type="text" name="email" id="email" placeholder="ex: johnDeo@gmail.com"
+                                    class="formbold-form-input" inputmode="email" />
+                                <div class="error-message" id="emailError" style="color: red;"></div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn-apply submit g-recaptcha"
+                                    data-sitekey="6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_" data-callback='onSubmit'
+                                    data-action='submit' id="SendBtn">Send<i class="arrow_right"></i></button>
+                            </div>
+                        </form>
+
+                        <div id="success-message"
+                            style="display: none; color: #ea5b0c; border: 1px solid #ea5b0c; padding: 20px">
+                            Thanks for contacting us! We will be in touch with you shortly.
+                        </div>
+
+                        <div id="Unsuccessfully-message" style="display: none; color: red;">
+                            The submission was unsuccessful. Please try again.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End question area-->
     </div>
     </div>
     </div>
@@ -182,8 +295,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.tiktok.com/@kakimotorgroup"
-                                            target="_blank">
+                                        <a href="https://www.tiktok.com/@kakimotorgroup" target="_blank">
                                             <i class="bx bxl-tiktok"></i>
                                         </a>
                                     </li>
@@ -335,9 +447,135 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
-    <!-- <script src="assets/js/language-switch.js"></script> -->
     <script src="assets/js/btnBMENG.js"></script>
     <script src="assets/js/language-switch-service.js"></script>
+
+    <script>
+        grecaptcha.ready(() => {
+            console.log('grecaptcha is ready');
+        })
+
+        function displayErrorMessage(inputFieldId, errorMessage) {
+            const errorElement = document.getElementById(`${inputFieldId}Error`);
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const brandInput = document.getElementById('brand');
+            const modelInput = document.getElementById('model');
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const emailInput = document.getElementById('email');
+
+
+            if (brandInput.value.trim() === '' || brandInput.value === 'default') {
+                displayErrorMessage('brand', 'Please select a brand');
+                isValid = false;
+            } else {
+                displayErrorMessage('brand', '');
+            }
+
+            if (modelInput.value.trim() === '' || modelInput.value === 'default') {
+                displayErrorMessage('model', 'Please select a model');
+                isValid = false;
+            } else {
+                displayErrorMessage('model', '');
+            }
+
+            if (nameInput.value.trim() === '') {
+                displayErrorMessage('name', 'This fields is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('name', '');
+            }
+
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (emailInput.value.trim() === '') {
+                displayErrorMessage('email', 'This field is required.');
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.value)) {
+                displayErrorMessage('email', 'Invalid email format.');
+                isValid = false;
+            } else {
+                displayErrorMessage('email', '');
+            }
+
+            if (phoneInput.value.trim() === '') {
+                displayErrorMessage('phone', 'This fields is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('phone', '');
+            }
+            return isValid;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputFields = ['phone'];
+
+            inputFields.forEach(function (fieldId) {
+                const inputField = document.getElementById(fieldId);
+                inputField.addEventListener('input', function () {
+                    inputField.value = inputField.value.replace(/\D/g, '');
+                });
+            });
+        });
+
+        function serializeForm(formData) {
+            var data = JSON.stringify(formData)
+            return data
+        }
+
+        function sendData(formValue, quiet = false) {
+            $.ajax({
+                // url: 'https://scripts.katimas.brixmind.com/buyform',
+                url: 'http://localhost:3535/buyform',
+                type: 'POST',
+                data: formValue,
+                success: function (data) {
+                    console.log('Success', data);
+                    $('#buyForm').hide();
+                    $('#success-message').show();
+                    resetForm();
+                },
+                error: function (xhr, status, error) {
+                    if (!quiet) {
+                        console.error('An error occured:', error);
+                        $('#Unsuccessfully-message').show();
+                    }
+                }
+            });
+        }
+
+        function resetForm() {
+            $(':input', '#buyForm')
+                .not(':button, :submit, :reset, :hidden')
+                .val('')
+                .prop('checked', false)
+                .prop('selected', false);
+        }
+
+        function onSubmit(token, quiet = false) {
+            const form = $('#buyForm');
+            const formValue = form.serialize();
+
+            if (validateForm()) {
+                grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
+                    var form = $('#buyForm');
+                    form.prepend(`<input type="hidden" name="token" value="${token}" />`);
+                    sendData(form.serialize(), quiet);
+                })
+                    .catch((error) => {
+                        console.log('An error occurred executing grecaptcha:', error);
+                    });
+            }
+        }
+        $(document).ready(() => {
+            $('.error_message').hide();
+        });
+    </script>
 </body>
 
 </html>

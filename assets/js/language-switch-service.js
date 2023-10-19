@@ -22,6 +22,15 @@ const textPrivacy = document.getElementById('textPrivacy');
 // Service
 const changeImage = document.getElementById('changeImage');
 
+//Apply Now
+const ApplyNowWithUs = document.getElementById('ApplyNowWithUs');
+const ApplyingDreamMotorcycle = document.getElementById('ApplyingDreamMotorcycle');
+const MotorcycleBrand = document.getElementById('MotorcycleBrand');
+const MotorcycleModel = document.getElementById('MotorcycleModel');
+const NameAs = document.getElementById('NameAs');
+const Mobile = document.getElementById('Mobile');
+const Email = document.getElementById('Email');
+const SendBtn = document.getElementById('SendBtn');
 
 
 
@@ -30,12 +39,14 @@ if (localStorage.getItem('language') === 'bm') {
   languageToggle.checked = true;
   updateNavbar('bm');
   updateFooter('bm');
+  updateApplyNow('bm');
   // changeImageLanguage('bm');
 
 } else {
   languageToggle.checked = false;
   updateNavbar('en');
   updateFooter('en');
+  updateApplyNow('en');
   // changeImageLanguage('en');
 }
 
@@ -44,12 +55,14 @@ languageToggle.addEventListener('change', function() {
   if (this.checked) {
     updateNavbar('bm');
     updateFooter('bm');
+    updateApplyNow('bm');
     // changeImageLanguage('bm');
 
     localStorage.setItem('language', 'bm');
   } else {
     updateNavbar('en');
     updateFooter('en');
+    updateApplyNow('en');
     // changeImageLanguage('en');
     localStorage.setItem('language', 'en');
   }
@@ -68,6 +81,28 @@ function updateNavbar(language) {
     textHow.textContent = 'How to buy';
     textOurBike.textContent = 'Our Bikes';
     textContactUs.textContent = 'Contact Us';
+  }
+}
+
+function updateApplyNow(language) {
+  if (language === 'bm') {
+    ApplyNowWithUs.textContent = 'Mohon Sekarang dengan Kami';
+    ApplyingDreamMotorcycle.textContent = 'Memohon untuk motosikal idaman anda begitu mudah, hanya isi borang permohonan ini dan hantar! Pasukan pakar kami akan menyemak permohonan anda dengan segera dan anda akan menerima jawapan dalam masa yang singkat';
+    MotorcycleBrand.textContent = 'Jenama Motosikal:';
+    MotorcycleModel.textContent = 'Model Motosikal:';
+    NameAs.textContent = 'Nama seperti Dalam NRIC:'
+    Mobile.textContent = 'Nombor telefon:';
+    Email.textContent = 'Emel:';
+    SendBtn.textContent = 'Hantar';
+  } else {
+    ApplyNowWithUs.textContent = 'Apply Now with Us';
+    ApplyingDreamMotorcycle.textContent = "Applying for your dream motorcycle is so easy, just fill out our online application form and submit! Our team of experts will review your application promptly, and you'll receive a response in no time.";
+    MotorcycleBrand.textContent = 'Motorcycle Brand:';
+    MotorcycleModel.textContent = 'Motorcycle Model:';
+    NameAs.textContent = 'Name as In NRIC: '
+    Mobile.textContent = 'Mobile Contact No.:';
+    Email.textContent = 'Email:';
+    SendBtn.textContent = 'Send';
   }
 }
 

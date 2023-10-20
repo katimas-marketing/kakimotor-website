@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/boxicons.min.css">
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <!-- Animate CSS -->
@@ -183,6 +183,9 @@
                                     </option>
                                     <option value="Yamaha" id="Yamaha">Yamaha</option>
                                     <option value="Honda" id="Honda">Honda</option>
+                                    <option value="Modenas" id="Modenas">Modenas</option>
+                                    <option value="GPX" id="GPX">GPX</option>
+                                    <option value="Suzuki" id="Suzuki">Suzuki</option>
                                 </select>
                                 <div class="error-message" id="brandError" style="color: red;"></div>
                             </div>
@@ -193,24 +196,72 @@
                                 <select class="formbold-form-input-option" name="model" id="model">
                                     <option value="" disabled selected id="PleaseSelect" class="select">Please Select
                                     </option>
-                                    <option value="" disabled id="yamaha" class="TheBrand">---------- YAMAHA
-                                        ---------------</option>
-                                    <option value="Yamaha 135LC V8">Yamaha 135LC V8</option>
-                                    <option value="Yamaha Ego Avantiz">Yamaha Ego Avantiz</option>
-                                    <option value="Yamaha EZ115">Yamaha EZ115</option>
-                                    <option value="Yamaha N MAX">Yamaha N MAX</option>
-                                    <option value="Yamaha NVX ABS">Yamaha NVX ABS</option>
-                                    <option value="Yamaha NVX STD">Yamaha NVX STD</option>
-                                    <option value="Yamaha Y15ZR">Yamaha Y15ZR</option>
-                                    <option value="Yamaha Y16ZR">Yamaha Y16ZR</option>
-                                    <option value="" disabled id="Honda" class="TheBrand">---------- HONDA
-                                        ---------------</option>
-                                    <option value="Honda Wave 110">Honda Wave 110</option>
-                                    <option value="Honda Vario 160">Honda Vario 160</option>
-                                    <option value="Honda RS-X 150">Honda RS-X 150</option>
-                                    <option value="Honda RS150R">Honda RS150R</option>
-                                    <option value="Honda ADV 160">Honda ADV 160</option>
-                                    <option value="Honda ADV 150">Honda ADV 150</option>
+                                    <option value="" disabled id="yamaha" class="TheBrand">YAMAHA</option>
+                                    <option value="YAMAHA - 135LC V8">135LC V8</option>
+                                    <option value="YAMAHA - 135LC SE V8">135LC SE V8</option>
+                                    <option value="YAMAHA - 135LC 5MRO ">135LC 5MRO </option>
+                                    <option value="YAMAHA - Y15ZR V2">Y15ZR V2</option>
+                                    <option value="YAMAHA - Y15ZR SE">Y15ZR SE</option>
+                                    <option value="YAMAHA - Y16ZR">Y16ZR</option>
+                                    <option value="YAMAHA - Y16ZR SE - Doxou Limited Edition">Y16ZR SE - Doxou Limited Edition</option>
+                                    <option value="YAMAHA - EZ115">EZ115</option>
+                                    <option value="YAMAHA - EGO Avantiz">EGO Avantiz</option>
+                                    <option value="YAMAHA - EGO Gear">EGO Gear</option>
+                                    <option value="YAMAHA - NMAX">NMAX</option>
+                                    <option value="YAMAHA - NVX - STD">NVX - STD</option>
+                                    <option value="YAMAHA - NVX - ABS">NVX - ABS</option>
+                                    <option value="YAMAHA - R15M">R15M</option>
+                                    <option value="YAMAHA - R25">R25</option>
+                                    <option value="YAMAHA - XMAX">XMAX</option>
+                                    <option value="YAMAHA - MT-09">MT-09</option>
+                                    <option value="YAMAHA - MT-15">MT-15</option>
+                                    <option value="YAMAHA - MT-25">MT-25</option>
+                                    <option value="YAMAHA - Tracer 9GT">Tracer 9GT</option>
+                                    <option value="YAMAHA - TMAX">TMAX</option>
+                                    <option value="" disabled></option>
+                                  
+                                    <option value="" disabled id="Honda" class="TheBrand">HONDA</option>
+                                    <option value="HONDA - Wave Alpha 110 (FI) - AFS110MCSN">Wave Alpha 110 (FI) - AFS110MCSN</option>
+                                    <option value="HONDA - Dash 125R ( FI) - AFP125CRFN">Dash 125R ( FI) - AFP125CRFN</option>
+                                    <option value="HONDA - Wave 125i (FI) - AFS125MCRM">Wave 125i (FI) - AFS125MCRM</option>
+                                    <option value="HONDA - RS150R (FI) - FS150FN4">RS150R (FI) - FS150FN4</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAN/FAN2">RS-X (FI) - FS150FAN/FAN2</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAP">RS-X (FI) - FS150FAP</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAP2">RS-X (FI) - FS150FAP2</option>
+                                    <option value="HONDA - CBR150 (FI) - CBR150RM/M9">CBR150 (FI) - CBR150RM/M9</option>
+                                    <option value="HONDA - BEAT 110 - ACH110CBFR">BEAT 110 - ACH110CBFR</option>
+                                    <option value="HONDA - VARIO 125 (FI) - ACB125CBTP">VARIO 125 (FI) - ACB125CBTP</option>
+                                    <option value="HONDA - VARIO 150 (FI) - ACB150CBTM">VARIO 150 (FI) - ACB150CBTM</option>
+                                    <option value="HONDA - VARIO 160 (FI) - ACB160CATN2">VARIO 160 (FI) - ACB160CATN2</option>
+                                    <option value="HONDA - VARIO 160 (FI) - ACB160CATN3">VARIO 160 (FI) - ACB160CATN3</option>
+                                    <option value="HONDA - ADV 150 (FI) - ADV150AM">ADV 150 (FI) - ADV150AM</option>
+                                    <option value="HONDA - ADV 160 (FI) - ADV160AP">ADV 160 (FI) - ADV160AP</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="Modenas" class="TheBrand">MODENAS</option>
+                                    <option value="MODENAS - Kriss 110 - MJ110F">Kriss 110 - MJ110F</option>
+                                    <option value="MODENAS - Kriss 110 - MJ110H">Kriss 110 - MJ110H</option>
+                                    <option value="MODENAS - Karisma 125S - SN125Z-1MY">Karisma 125S - SN125Z-1MY</option>
+                                    <option value="MODENAS - Elegan 250 ABS - SN250K-A2MY">Elegan 250 ABS - SN250K-A2MY</option>
+                                    <option value="MODENAS - Elegan 250 EX ABS - SN250K-A3MY">Elegan 250 EX ABS - SN250K-A3MY</option>
+                                    <option value="MODENAS - Pulsar RS200 A2MY ABS - RS200-S1">Pulsar RS200 A2MY ABS - RS200-S1</option>
+                                    <option value="MODENAS - Pulsar NS200 FI ABS - NS200-S1">Pulsar NS200 FI ABS - NS200-S1</option>
+                                    <option value="MODENAS - Dominar 400 - DM400UG">Dominar 400 - DM400UG</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="gpx" class="TheBrand">GPX</option>
+                                    <option value="GPX - POP Z110">POP Z110</option>
+                                    <option value="GPX - DEMON GR200RR">DEMON GR200RR</option>
+                                    <option value="GPX - LEGEND 150S">LEGEND 150S</option>
+                                    <option value="GPX - LEGEND 250 TWIN II">LEGEND 250 TWIN II</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="Suzuki" class="TheBrand">SUZUKI</option>
+                                    <option value="SUZUKI - Raider R150FI">Raider R150FI</option>
+                                    <option value="SUZUKI - Raider R150FI AS25">Raider R150FI AS25</option>
+                                    <option value="SUZUKI - GSX-S150">GSX-S150</option>
+                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>
+
                                 </select>
                                 <div class="error-message" id="modelError" style="color: red;"></div>
                             </div>

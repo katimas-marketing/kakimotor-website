@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/boxicons.min.css">
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <!-- Magnific Popup CSS -->
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <!-- Animate CSS -->
@@ -25,9 +25,21 @@
     <!-- Theme Dark CSS -->
     <link rel="stylesheet" href="assets/css/theme-dark.css">
 
-    <title>KAKI MOTOR</title>
+    <meta name="keywords" content="Motor">
+    <meta name="description"
+        content="Kaki Motor Kuching offer a wide variety of Mototcycles, flexible financing options 
+    and we also a motorbike dealer in kuching. Kuching city's newest hotspot for authorized Yamaha and Honda motorbikes.">
+    <meta name="description" lang="ms"
+        content="Kaki Motor Kuching menawarkan pelbagai jenis Mototcycles, pilihan 
+    pembiayaan yang fleksibel dan kami juga pengedar motosikal di kuching. Tempat panas terbaharu bandar raya Kuching untuk motosikal Yamaha dan Honda.">
+
+    <title>How to Buy | KAKI MOTOR | Kuching Motorbike Dealership</title>>
 
     <link rel="icon" type="image/png" href="assets/img/favicon-01.png">
+
+    <!-- Google Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y3XMFTSC9"></script>
     <script>
@@ -59,7 +71,7 @@
         <!-- Menu For Mobile Device -->
         <div class="mobile-nav">
             <a href="/" class="logo">
-                <img src="assets/img/logo.png" alt="Logo">
+                <img src="assets/img/logo.png" alt="Kaki Motor Logo">
             </a>
         </div>
 
@@ -68,8 +80,9 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo-01.png" alt="Logo" width="170" height="110" class="logo-one">
-                        <img src="assets/img/logo-two.png" class="logo-two" alt="Logo">
+                        <img src="assets/img/logo-01.png" alt="Kaki Motor Logo" width="170" height="110"
+                            class="logo-one">
+                        <img src="assets/img/logo-two.png" class="logo-two" alt="Kaki Motor Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -123,11 +136,13 @@
                                     <button class="btnLang" id="engButton">BM Version -></button>
                                     <div class="service-details-slider owl-theme owl-carousel">
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_en.jpg" alt="Service">
+                                            <img id="changeImage" src="assets/img/how_en.jpg"
+                                                alt="Easy steps to own dream bike">
                                         </div>
 
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_bm.jpg" alt="Service">
+                                            <img id="changeImage" src="assets/img/how_bm.jpg"
+                                                alt="Easy steps to own dream bike">
                                         </div>
                                     </div>
                         </div>
@@ -142,6 +157,161 @@
             </div>
         </div>
     </div>
+
+    <!--start question area-->
+    <section class="question-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="question-content">
+                        <h2 id="ApplyNowWithUs">Apply Now with Us</h2>
+                        <p id="ApplyingDreamMotorcycle">Applying for your dream motorcycle is so easy, just fill out our online
+                            application form and submit! Our team of experts will review your application promptly, and
+                            you'll receive a response in no time.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="question-contact-form">
+                        <form id="buyForm" method="POST" class="contact-form r0w m0 js-ajax-form">
+                            <div class="formbold-mb-3">
+                                <label for="brand" class="formbold-form-label" id="MotorcycleBrand">
+                                    Motorcycle Brand: </label>
+                                <select class="formbold-form-input-option" name="brand" id="brand">
+                                    <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    </option>
+                                    <option value="Yamaha" id="Yamaha">Yamaha</option>
+                                    <option value="Honda" id="Honda">Honda</option>
+                                    <option value="Modenas" id="Modenas">Modenas</option>
+                                    <option value="GPX" id="GPX">GPX</option>
+                                    <option value="Suzuki" id="Suzuki">Suzuki</option>
+                                </select>
+                                <div class="error-message" id="brandError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="model" class="formbold-form-label" id="MotorcycleModel">
+                                    Motorcycle Model: </label>
+                                <select class="formbold-form-input-option" name="model" id="model">
+                                    <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    </option>
+                                    <option value="" disabled id="yamaha" class="TheBrand">YAMAHA</option>
+                                    <option value="YAMAHA - 135LC V8">135LC V8</option>
+                                    <option value="YAMAHA - 135LC SE V8">135LC SE V8</option>
+                                    <option value="YAMAHA - 135LC 5MRO ">135LC 5MRO </option>
+                                    <option value="YAMAHA - Y15ZR V2">Y15ZR V2</option>
+                                    <option value="YAMAHA - Y15ZR SE">Y15ZR SE</option>
+                                    <option value="YAMAHA - Y16ZR">Y16ZR</option>
+                                    <option value="YAMAHA - Y16ZR SE - Doxou Limited Edition">Y16ZR SE - Doxou Limited Edition</option>
+                                    <option value="YAMAHA - EZ115">EZ115</option>
+                                    <option value="YAMAHA - EGO Avantiz">EGO Avantiz</option>
+                                    <option value="YAMAHA - EGO Gear">EGO Gear</option>
+                                    <option value="YAMAHA - NMAX">NMAX</option>
+                                    <option value="YAMAHA - NVX - STD">NVX - STD</option>
+                                    <option value="YAMAHA - NVX - ABS">NVX - ABS</option>
+                                    <option value="YAMAHA - R15M">R15M</option>
+                                    <option value="YAMAHA - R25">R25</option>
+                                    <option value="YAMAHA - XMAX">XMAX</option>
+                                    <option value="YAMAHA - MT-09">MT-09</option>
+                                    <option value="YAMAHA - MT-15">MT-15</option>
+                                    <option value="YAMAHA - MT-25">MT-25</option>
+                                    <option value="YAMAHA - Tracer 9GT">Tracer 9GT</option>
+                                    <option value="YAMAHA - TMAX">TMAX</option>
+                                    <option value="" disabled></option>
+                                  
+                                    <option value="" disabled id="Honda" class="TheBrand">HONDA</option>
+                                    <option value="HONDA - Wave Alpha 110 (FI) - AFS110MCSN">Wave Alpha 110 (FI) - AFS110MCSN</option>
+                                    <option value="HONDA - Dash 125R ( FI) - AFP125CRFN">Dash 125R ( FI) - AFP125CRFN</option>
+                                    <option value="HONDA - Wave 125i (FI) - AFS125MCRM">Wave 125i (FI) - AFS125MCRM</option>
+                                    <option value="HONDA - RS150R (FI) - FS150FN4">RS150R (FI) - FS150FN4</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAN/FAN2">RS-X (FI) - FS150FAN/FAN2</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAP">RS-X (FI) - FS150FAP</option>
+                                    <option value="HONDA - RS-X (FI) - FS150FAP2">RS-X (FI) - FS150FAP2</option>
+                                    <option value="HONDA - CBR150 (FI) - CBR150RM/M9">CBR150 (FI) - CBR150RM/M9</option>
+                                    <option value="HONDA - BEAT 110 - ACH110CBFR">BEAT 110 - ACH110CBFR</option>
+                                    <option value="HONDA - VARIO 125 (FI) - ACB125CBTP">VARIO 125 (FI) - ACB125CBTP</option>
+                                    <option value="HONDA - VARIO 150 (FI) - ACB150CBTM">VARIO 150 (FI) - ACB150CBTM</option>
+                                    <option value="HONDA - VARIO 160 (FI) - ACB160CATN2">VARIO 160 (FI) - ACB160CATN2</option>
+                                    <option value="HONDA - VARIO 160 (FI) - ACB160CATN3">VARIO 160 (FI) - ACB160CATN3</option>
+                                    <option value="HONDA - ADV 150 (FI) - ADV150AM">ADV 150 (FI) - ADV150AM</option>
+                                    <option value="HONDA - ADV 160 (FI) - ADV160AP">ADV 160 (FI) - ADV160AP</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="Modenas" class="TheBrand">MODENAS</option>
+                                    <option value="MODENAS - Kriss 110 - MJ110F">Kriss 110 - MJ110F</option>
+                                    <option value="MODENAS - Kriss 110 - MJ110H">Kriss 110 - MJ110H</option>
+                                    <option value="MODENAS - Karisma 125S - SN125Z-1MY">Karisma 125S - SN125Z-1MY</option>
+                                    <option value="MODENAS - Elegan 250 ABS - SN250K-A2MY">Elegan 250 ABS - SN250K-A2MY</option>
+                                    <option value="MODENAS - Elegan 250 EX ABS - SN250K-A3MY">Elegan 250 EX ABS - SN250K-A3MY</option>
+                                    <option value="MODENAS - Pulsar RS200 A2MY ABS - RS200-S1">Pulsar RS200 A2MY ABS - RS200-S1</option>
+                                    <option value="MODENAS - Pulsar NS200 FI ABS - NS200-S1">Pulsar NS200 FI ABS - NS200-S1</option>
+                                    <option value="MODENAS - Dominar 400 - DM400UG">Dominar 400 - DM400UG</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="gpx" class="TheBrand">GPX</option>
+                                    <option value="GPX - POP Z110">POP Z110</option>
+                                    <option value="GPX - DEMON GR200RR">DEMON GR200RR</option>
+                                    <option value="GPX - LEGEND 150S">LEGEND 150S</option>
+                                    <option value="GPX - LEGEND 250 TWIN II">LEGEND 250 TWIN II</option>
+                                    <option value="" disabled></option>
+
+                                    <option value="" disabled id="Suzuki" class="TheBrand">SUZUKI</option>
+                                    <option value="SUZUKI - Raider R150FI">Raider R150FI</option>
+                                    <option value="SUZUKI - Raider R150FI AS25">Raider R150FI AS25</option>
+                                    <option value="SUZUKI - GSX-S150">GSX-S150</option>
+                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>
+
+                                </select>
+                                <div class="error-message" id="modelError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="name" class="formbold-form-label" id="NameAs"> Name as In
+                                    NRIC: </label>
+                                <input type="text" name="name" id="name" placeholder="ex: John Doe"
+                                    class="formbold-form-input" />
+                                <div class="error-message" id="nameError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="phone" class="formbold-form-label" id="Mobile"> Mobile
+                                    Contact No.: </label>
+                                <input type="text" name="phone" id="phone" placeholder="ex: 0123456789"
+                                    class="formbold-form-input" inputmode="numeric" />
+                                <div class="error-message" id="phoneError" style="color: red;"></div>
+                            </div>
+
+                            <div class="formbold-mb-3">
+                                <label for="email" class="formbold-form-label" id="Email">
+                                    Email:</label>
+                                <input type="text" name="email" id="email" placeholder="ex: johnDeo@gmail.com"
+                                    class="formbold-form-input" inputmode="email" />
+                                <div class="error-message" id="emailError" style="color: red;"></div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn-apply submit g-recaptcha"
+                                    data-sitekey="6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_" data-callback='onSubmit'
+                                    data-action='submit' id="SendBtn">Send<i class="arrow_right"></i></button>
+                            </div>
+                        </form>
+
+                        <div id="success-message"
+                            style="display: none; color: #ea5b0c; border: 1px solid #ea5b0c; padding: 20px">
+                            Thanks for contacting us! We will be in touch with you shortly.
+                        </div>
+
+                        <div id="Unsuccessfully-message" style="display: none; color: red;">
+                            The submission was unsuccessful. Please try again.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End question area-->
     </div>
     </div>
     </div>
@@ -157,7 +327,7 @@
                         <div class="footer-item">
                             <div class="footer-logo">
                                 <a href="/">
-                                    <img src="assets/img/logo-two.png" alt="Logo" width="170">
+                                    <img src="assets/img/logo-two.png" alt="Kaki Motor Logo" width="170">
                                 </a>
                                 <p id="textFooterAdd">We are dedicated to providing our customers with the best possible
                                     experience when
@@ -173,6 +343,11 @@
                                         <a href="https://instagram.com/kakimotorgroup?igshid=YmMyMTA2M2Y="
                                             target="_blank">
                                             <i class="bx bxl-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@kakimotorgroup" target="_blank">
+                                            <i class="bx bxl-tiktok"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -229,14 +404,32 @@
                                         </li>
                                     </a><br>
 
-
                                     <li>
                                         <i class="bx bx-phone-call"></i>
                                         <a href="https://api.whatsapp.com/send?phone=60182037544">
-                                            +60 18-203 7544
+                                            +60 18-203 7544 (SA Nick)
                                         </a>
                                     </li>
-
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=60162094333">
+                                            +60 16-2094333 (SA Desmond)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=60135419278">
+                                            +60 13-5419278 (SA Siti)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=601125112128">
+                                            +60 11-25112128 (SA Frankey)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=60147118178">
+                                            +60 14-7118178 (SA Yaasin)
+                                        </a>
+                                    </li>
                                     <li>
                                         <i class="bx bx-mail-send"></i>
                                         <a href="mailto:enquiries@kaki.com.my">
@@ -278,6 +471,7 @@
             </div>
     </footer>
     <!-- End Footer -->
+
     <!-- Essential JS -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -300,9 +494,134 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
-    <!-- <script src="assets/js/language-switch.js"></script> -->
     <script src="assets/js/btnBMENG.js"></script>
     <script src="assets/js/language-switch-service.js"></script>
+
+    <script>
+        grecaptcha.ready(() => {
+            console.log('grecaptcha is ready');
+        })
+
+        function displayErrorMessage(inputFieldId, errorMessage) {
+            const errorElement = document.getElementById(`${inputFieldId}Error`);
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+            }
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const brandInput = document.getElementById('brand');
+            const modelInput = document.getElementById('model');
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const emailInput = document.getElementById('email');
+
+
+            if (brandInput.value.trim() === '' || brandInput.value === 'default') {
+                displayErrorMessage('brand', 'Please select a brand');
+                isValid = false;
+            } else {
+                displayErrorMessage('brand', '');
+            }
+
+            if (modelInput.value.trim() === '' || modelInput.value === 'default') {
+                displayErrorMessage('model', 'Please select a model');
+                isValid = false;
+            } else {
+                displayErrorMessage('model', '');
+            }
+
+            if (nameInput.value.trim() === '') {
+                displayErrorMessage('name', 'This fields is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('name', '');
+            }
+
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (emailInput.value.trim() === '') {
+                displayErrorMessage('email', 'This field is required.');
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.value)) {
+                displayErrorMessage('email', 'Invalid email format.');
+                isValid = false;
+            } else {
+                displayErrorMessage('email', '');
+            }
+
+            if (phoneInput.value.trim() === '') {
+                displayErrorMessage('phone', 'This fields is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('phone', '');
+            }
+            return isValid;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputFields = ['phone'];
+
+            inputFields.forEach(function (fieldId) {
+                const inputField = document.getElementById(fieldId);
+                inputField.addEventListener('input', function () {
+                    inputField.value = inputField.value.replace(/\D/g, '');
+                });
+            });
+        });
+
+        function serializeForm(formData) {
+            var data = JSON.stringify(formData)
+            return data
+        }
+
+        function sendData(formValue, quiet = false) {
+            $.ajax({
+                url: 'https://scripts.katimas.brixmind.com/buyform',
+                type: 'POST',
+                data: formValue,
+                success: function (data) {
+                    console.log('Success', data);
+                    $('#buyForm').hide();
+                    $('#success-message').show();
+                    resetForm();
+                },
+                error: function (xhr, status, error) {
+                    if (!quiet) {
+                        console.error('An error occured:', error);
+                        $('#Unsuccessfully-message').show();
+                    }
+                }
+            });
+        }
+
+        function resetForm() {
+            $(':input', '#buyForm')
+                .not(':button, :submit, :reset, :hidden')
+                .val('')
+                .prop('checked', false)
+                .prop('selected', false);
+        }
+
+        function onSubmit(token, quiet = false) {
+            const form = $('#buyForm');
+            const formValue = form.serialize();
+
+            if (validateForm()) {
+                grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
+                    var form = $('#buyForm');
+                    form.prepend(`<input type="hidden" name="token" value="${token}" />`);
+                    sendData(form.serialize(), quiet);
+                })
+                    .catch((error) => {
+                        console.log('An error occurred executing grecaptcha:', error);
+                    });
+            }
+        }
+        $(document).ready(() => {
+            $('.error_message').hide();
+        });
+    </script>
 </body>
 
 </html>

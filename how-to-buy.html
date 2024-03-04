@@ -178,14 +178,16 @@
                             <div class="formbold-mb-3">
                                 <label for="brand" class="formbold-form-label" id="MotorcycleBrand">
                                     Motorcycle Brand: </label>
-                                <select class="formbold-form-input-option" name="brand" id="brand">
+                                <select class="formbold-form-input-option" name="brand" id="brand" onchange="populateModels()">
                                     <option value="" disabled selected id="PleaseSelect" class="select">Please Select
                                     </option>
                                     <option value="Yamaha" id="Yamaha">Yamaha</option>
                                     <option value="Honda" id="Honda">Honda</option>
                                     <option value="Modenas" id="Modenas">Modenas</option>
-                                    <option value="GPX" id="GPX">GPX</option>
+                                    <option value="Benelli" id="Benelli">Benelli</option>
                                     <option value="Suzuki" id="Suzuki">Suzuki</option>
+                                    <option value="SYM" id="SYM">SYM</option>
+                                    <option value="WMOTO" id="WMOTO">WMOTO</option>
                                 </select>
                                 <div class="error-message" id="brandError" style="color: red;"></div>
                             </div>
@@ -195,6 +197,8 @@
                                     Motorcycle Model: </label>
                                 <select class="formbold-form-input-option" name="model" id="model">
                                     <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    
+                                    <!-- Prev Options
                                     </option>
                                     <option value="" disabled id="yamaha" class="TheBrand">YAMAHA</option>
                                     <option value="YAMAHA - 135LC V8">135LC V8</option>
@@ -260,7 +264,7 @@
                                     <option value="SUZUKI - Raider R150FI">Raider R150FI</option>
                                     <option value="SUZUKI - Raider R150FI AS25">Raider R150FI AS25</option>
                                     <option value="SUZUKI - GSX-S150">GSX-S150</option>
-                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>
+                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>-->
 
                                 </select>
                                 <div class="error-message" id="modelError" style="color: red;"></div>
@@ -503,6 +507,43 @@
     <script src="assets/js/language-switch-service.js"></script>
 
     <script>
+        
+        var selectedBrand = '';
+
+        var modelsByBrand = {
+        Yamaha: ["Yamaha EZ115", "Yamaha 135LC V8", "Yamaha 135LC Fi 5MRO Malaysia Edition", "Yamaha 135LC SE", "Yamaha Y15ZR", "Yamaha Y15ZR SE", "Yamaha Y16ZR", "Yamaha R15M", "Yamaha EGO Avantiz EZ", "Yamaha EGO Gear","Yamaha NMAX", "Yamaha NVX", "Yamaha NVX ABS"],
+        Honda: ["WAVE ALPHA", "WAVE 125 Fi","VARIO 125", "VARIO 160", "RS 150", "RSX 150 Repsol Edition", "RSX 150", "ADV 160", "HONDA BEAT"],
+        Suzuki: ["RAIDER 150"],
+        Modenas: ["KRISS 110", "KARISMA 125"],
+        Benelli: ["PANAREA 125"],
+        SYM: ["VF3i"],
+        WMOTO: ["EXTREME 150i"]
+        };
+        
+        // Form drop-down for models based on brands
+        function populateModels() {
+            var brandSelect = document.getElementById("brand");
+            var modelSelect = document.getElementById("model");
+            selectedBrand = brandSelect.value; // Save selected brand
+                        
+            // Clear previous options
+            modelSelect.innerHTML = '<option value="">Select Model</option>';
+
+            if (selectedBrand !== "") {
+                // Populate models based on selected brand
+                var models = modelsByBrand[selectedBrand];
+                models.forEach(function(model) {
+                    var option = document.createElement("option");
+                    option.text = model;
+                    option.value = model;
+                    modelSelect.add(option);
+                });
+            }   
+            
+            // Log selected brand to console
+            //console.log("Selected brand:", selectedBrand);
+        }
+
         grecaptcha.ready(() => {
             console.log('grecaptcha is ready');
         })

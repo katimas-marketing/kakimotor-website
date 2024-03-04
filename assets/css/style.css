@@ -114,6 +114,9 @@ img {
 .pb-70 {
   padding-bottom: 70px;
 }
+.pb-btm-none {
+  padding-bottom: 0;
+}
 
 .pb-100 {
   padding-bottom: 100px;
@@ -868,7 +871,7 @@ input.check-toggle-round-flat:checked+label:after {
   justify-content: center;
 } 
 .wrapper{
-  min-height: 70vh; 
+  min-height: 30vh; 
   align-items: center;
   justify-content: center;
 
@@ -941,7 +944,7 @@ input.check-toggle-round-flat:checked+label:after {
     width: calc(100% / 2);
   }
   .wrapper {
-    min-height: 30vh;
+    min-height: 40vh;
   } 
 }
 
@@ -966,7 +969,7 @@ input.check-toggle-round-flat:checked+label:after {
 .indicators {
   display: flex;
   justify-content: center;
-  margin-top: 10px; /* Adjust this value as needed */
+  margin-top: 20px; /* Adjust this value as needed */
   width: 100%; /* Ensure the indicators span the full width */
 }
 
@@ -1020,7 +1023,7 @@ input.check-toggle-round-flat:checked+label:after {
 }
 
 .work-area .work-item {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   position: relative;
 }
 

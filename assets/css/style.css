@@ -410,6 +410,7 @@ input.check-toggle-round-flat:checked+label:after {
   padding: 12px 20px;
   margin-top: 10px;
   z-index: 1;
+  border-radius:5px;
 }
 .cmn-btn a:hover {
   border: 1px solid #30358c;

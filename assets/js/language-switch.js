@@ -85,7 +85,7 @@ function updateFooter(language) {
     textOurBikeF.textContent = 'Our Bikes';
     textContactUsF.textContent = 'Contact Us';
     textFindUs.textContent = 'Find Us';
-    textTC.textContent = 'Terms and Conditions';
+    // textTC.textContent = 'Terms and Conditions';
     textPrivacy.textContent = 'Privacy Policy';
   }
 }

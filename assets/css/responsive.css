@@ -33,17 +33,17 @@
   /*------ Home One CSS ------*/
   /*-- Navbar --*/
   .mean-container .mean-nav .navbar-nav {
-    height: 350px;
+    height: 320px;  /*--changed from 350px--*/
     overflow-y: scroll;
   }
 
   .mean-container .mean-bar {
     background-color: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .mobile-nav .logo {
-    top: 9px;
+    top: 5px;
     max-width: 105px;
   }
 
@@ -51,7 +51,7 @@
     background: #fdb819;
     position: relative;
     top: 8px;
-    margin-top: -6px;
+    margin-top: -8px; /*--changed from -6px--*/
   }
 
   .mean-container a.meanmenu-reveal {

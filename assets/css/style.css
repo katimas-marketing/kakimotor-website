@@ -138,6 +138,20 @@ button:focus {
   display: none;
 }
 
+
+@media screen and (max-width: 750px) {
+  .logo-one{
+    height:fit-content;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .logo-one{
+    height:fit-content;
+  }
+}
+
 .main-nav {
   background: #ffffff;
   padding-top: 0;
@@ -965,6 +979,15 @@ input.check-toggle-round-flat:checked+label:after {
   .wrapper {
     min-height: 20vh;
   } 
+  .wrapper i:first-child{
+    color: #EA5B0C;
+    left: 5px;
+    display: none;
+  }
+  .wrapper i:last-child{
+    right: 5px;
+    color: #EA5B0C;
+  }
 }
 
 .indicators {

@@ -21,16 +21,19 @@ arrowIcons.forEach(icon => {
     });
 });
 
-// Create indicators for each image
+
+//Create indicators for each image
 const createIndicators = () => {
   const totalImages = carousel.querySelectorAll("img").length;
   for (let i = 0; i < totalImages; i++) {
     const indicator = document.createElement('div');
     indicator.classList.add('indicator');
     indicator.addEventListener('click', () => {
-      // Scroll to the corresponding image when an indicator is clicked
+      // Set the scrollLeft to the center of the ith image when an indicator is clicked
+      const imageWidth = firstImg.clientWidth + 14; // Image width plus margin
+      const scrollLeft = (i * imageWidth) - (carousel.clientWidth / 2) + (imageWidth / 2); // Calculate scrollLeft position
       carousel.scrollTo({
-        left: i * firstImg.clientWidth, // Scroll to the position of the ith image
+        left: scrollLeft,
         behavior: 'smooth'
       });
     });
@@ -41,7 +44,8 @@ const createIndicators = () => {
 // Update indicators based on the current active image
 const updateIndicators = () => {
   const indicators = document.querySelectorAll('.indicator');
-  const currentIndex = Math.round(carousel.scrollLeft / firstImg.clientWidth);
+  // const currentIndex = Math.round(carousel.scrollLeft / firstImg.clientWidth);
+  const currentIndex = Math.round(carousel.scrollLeft / (firstImg.clientWidth + 14)); // Image width plus margin
   indicators.forEach((indicator, index) => {
     if (index === currentIndex) {
       indicator.classList.add('active');
@@ -56,25 +60,27 @@ carousel.addEventListener('scroll', updateIndicators);
 createIndicators();
 updateIndicators();
 
-const autoSlide = () => {
-  // Calculate the next scroll position
-  let nextScrollLeft = carousel.scrollLeft + 200; // Adjust this value as needed for smooth scrolling
 
-  // If the next scroll position exceeds the maximum scrollable width, reset it to 0
-  if (nextScrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-      // Smoothly scroll back to the beginning
-      carousel.scrollTo({
-          left: 0,
-          behavior: 'smooth'
-      });
-  } else {
-      // Smoothly scroll to the next position
-      carousel.scrollTo({
-          left: nextScrollLeft,
-          behavior: 'smooth'
-      });
-  }
-}
+// Auto Slide Function
+// const autoSlide = () => {
+//   // Calculate the next scroll position
+//   let nextScrollLeft = carousel.scrollLeft + 1220; // Adjust this value as needed for smooth scrolling
+
+//   // If the next scroll position exceeds the maximum scrollable width, reset it to 0
+//   if (nextScrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+//       // Smoothly scroll back to the beginning
+//       carousel.scrollTo({
+//           left: 0,
+//           behavior: 'smooth'
+//       });
+//   } else {
+//       // Smoothly scroll to the next position
+//       carousel.scrollTo({
+//           left: nextScrollLeft,
+//           behavior: 'smooth'
+//       });
+//   }
+// }
 
 const dragStart = (e) => {
     // updatating global variables value on mouse down event
@@ -100,7 +106,6 @@ const dragStop = () => {
 
     if(!isDragging) return;
     isDragging = false;
-    autoSlide();
 }
 
 carousel.addEventListener("mousedown", dragStart);
@@ -112,7 +117,7 @@ carousel.addEventListener("touchmove", dragging);
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
 
-// Add auto sliding functionality
-setInterval(() => {
-    autoSlide();
-}, 2500); // Adjust the interval (in milliseconds) as needed
+// // Add auto sliding functionality
+// setInterval(() => {
+//     autoSlide();
+// }, 2500); // Adjust the interval (in milliseconds) as needed

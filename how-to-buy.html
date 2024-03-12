@@ -25,6 +25,8 @@
     <!-- Theme Dark CSS -->
     <link rel="stylesheet" href="assets/css/theme-dark.css">
 
+    <link rel="icon" type="image/png" href="assets/img/Favicon-Latest.png">
+
     <meta name="keywords" content="Motor">
     <meta name="description"
         content="Kaki Motor Kuching offer a wide variety of Mototcycles, flexible financing options 
@@ -33,9 +35,7 @@
         content="Kaki Motor Kuching menawarkan pelbagai jenis Mototcycles, pilihan 
     pembiayaan yang fleksibel dan kami juga pengedar motosikal di kuching. Tempat panas terbaharu bandar raya Kuching untuk motosikal Yamaha dan Honda.">
 
-    <title>How to Buy | KAKI MOTOR | Kuching Motorbike Dealership</title>>
-
-    <link rel="icon" type="image/png" href="assets/img/favicon-01.png">
+    <title>How to Buy | JOM KAKI MOTOR | Kuching Motorbike Dealership</title>
 
     <!-- Google Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_"></script>
@@ -71,7 +71,7 @@
         <!-- Menu For Mobile Device -->
         <div class="mobile-nav">
             <a href="/" class="logo">
-                <img src="assets/img/logo.png" alt="Kaki Motor Logo">
+                <img src="assets/img/logo.png" alt="Kaki Motor Logo"  width="62" height="47">
             </a>
         </div>
 
@@ -80,9 +80,9 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="assets/img/logo-01.png" alt="Kaki Motor Logo" width="170" height="110"
+                        <img src="assets/img/logo.png" alt="Kaki Motor Logo" width="140" height="110"
                             class="logo-one">
-                        <img src="assets/img/logo-two.png" class="logo-two" alt="Kaki Motor Logo">
+                        <img src="assets/img/logo.png" class="logo-two" alt="Kaki Motor Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -136,12 +136,12 @@
                                     <button class="btnLang" id="engButton">BM Version -></button>
                                     <div class="service-details-slider owl-theme owl-carousel">
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_en.jpg"
+                                            <img id="changeImage" src="assets/img/how to_ENG.png"
                                                 alt="Easy steps to own dream bike">
                                         </div>
 
                                         <div class="service-details-slider-item">
-                                            <img id="changeImage" src="assets/img/how_bm.jpg"
+                                            <img id="changeImage" src="assets/img/how to_BM.png"
                                                 alt="Easy steps to own dream bike">
                                         </div>
                                     </div>
@@ -178,14 +178,16 @@
                             <div class="formbold-mb-3">
                                 <label for="brand" class="formbold-form-label" id="MotorcycleBrand">
                                     Motorcycle Brand: </label>
-                                <select class="formbold-form-input-option" name="brand" id="brand">
+                                <select class="formbold-form-input-option" name="brand" id="brand" onchange="populateModels()">
                                     <option value="" disabled selected id="PleaseSelect" class="select">Please Select
                                     </option>
                                     <option value="Yamaha" id="Yamaha">Yamaha</option>
                                     <option value="Honda" id="Honda">Honda</option>
                                     <option value="Modenas" id="Modenas">Modenas</option>
-                                    <option value="GPX" id="GPX">GPX</option>
+                                    <option value="Benelli" id="Benelli">Benelli</option>
                                     <option value="Suzuki" id="Suzuki">Suzuki</option>
+                                    <option value="SYM" id="SYM">SYM</option>
+                                    <option value="WMOTO" id="WMOTO">WMOTO</option>
                                 </select>
                                 <div class="error-message" id="brandError" style="color: red;"></div>
                             </div>
@@ -195,6 +197,8 @@
                                     Motorcycle Model: </label>
                                 <select class="formbold-form-input-option" name="model" id="model">
                                     <option value="" disabled selected id="PleaseSelect" class="select">Please Select
+                                    
+                                    <!-- Prev Options
                                     </option>
                                     <option value="" disabled id="yamaha" class="TheBrand">YAMAHA</option>
                                     <option value="YAMAHA - 135LC V8">135LC V8</option>
@@ -260,7 +264,7 @@
                                     <option value="SUZUKI - Raider R150FI">Raider R150FI</option>
                                     <option value="SUZUKI - Raider R150FI AS25">Raider R150FI AS25</option>
                                     <option value="SUZUKI - GSX-S150">GSX-S150</option>
-                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>
+                                    <option value="SUZUKI - GSX-R150">GSX-R150</option>-->
 
                                 </select>
                                 <div class="error-message" id="modelError" style="color: red;"></div>
@@ -327,7 +331,7 @@
                         <div class="footer-item">
                             <div class="footer-logo">
                                 <a href="/">
-                                    <img src="assets/img/logo-two.png" alt="Kaki Motor Logo" width="170">
+                                    <img src="assets/img/logo.png" alt="Kaki Motor Logo" width="170">
                                 </a>
                                 <p id="textFooterAdd">We are dedicated to providing our customers with the best possible
                                     experience when
@@ -335,18 +339,18 @@
                                     for your needs and supporting you throughout your motorbike journey.&nbsp;</p>
                                 <ul>
                                     <li>
-                                        <a href="https://www.facebook.com/kakimotorgroup" target="_blank">
+                                        <a href="https://www.facebook.com/jomkakimotor" target="_blank">
                                             <i class="bx bxl-facebook"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://instagram.com/kakimotorgroup?igshid=YmMyMTA2M2Y="
+                                        <a href="https://instagram.com/jomkakimotor/"
                                             target="_blank">
                                             <i class="bx bxl-instagram"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.tiktok.com/@kakimotorgroup" target="_blank">
+                                        <a href="https://www.tiktok.com/@jomkakimotor" target="_blank">
                                             <i class="bx bxl-tiktok"></i>
                                         </a>
                                     </li>
@@ -431,6 +435,12 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <!-- <i class="bx bx-phone-call"></i> -->
+                                        <a href="https://wa.link/iu06gq">
+                                            +60 17-9200427 (SA Felicia)
+                                        </a>
+                                    </li>
+                                    <li>
                                         <i class="bx bx-mail-send"></i>
                                         <a href="mailto:enquiries@kaki.com.my">
                                             enquiries@kaki.com.my
@@ -446,23 +456,22 @@
                         <div class="col-lg-7">
                             <div class="copyright-item">
                                 <p>Copyright @
-                                    <script>document.write(new Date().getFullYear())</script> KAKI MOTOR (K
-                                    Trading)&nbsp; &nbsp;
+                                    <script>document.write(new Date().getFullYear())</script> JomKaki Motor (K Trading Sdn Bhd)&nbsp; &nbsp;
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="copyright-item copyright-right">
                                 <ul>
-                                    <li>
+                                    <!--<li>
                                         <a href="#" id="textTC">Terms and Conditions</a>
                                     </li>
                                     <li>
                                         <span>-</span>
-                                    </li>
-                                    <li>
+                                    </li>-->
+                                    <!-- <li>
                                         <a href="#" id="textPrivacy">Privacy Policy</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -498,6 +507,43 @@
     <script src="assets/js/language-switch-service.js"></script>
 
     <script>
+        
+        var selectedBrand = '';
+
+        var modelsByBrand = {
+        Yamaha: ["Yamaha EZ115", "Yamaha 135LC V8", "Yamaha 135LC Fi 5MRO Malaysia Edition", "Yamaha 135LC SE", "Yamaha Y15ZR", "Yamaha Y15ZR SE", "Yamaha Y16ZR", "Yamaha R15M", "Yamaha EGO Avantiz EZ", "Yamaha EGO Gear","Yamaha NMAX", "Yamaha NVX", "Yamaha NVX ABS"],
+        Honda: ["WAVE ALPHA", "WAVE 125 Fi","VARIO 125", "VARIO 160", "RS 150", "RSX 150 Repsol Edition", "RSX 150", "ADV 160", "HONDA BEAT"],
+        Suzuki: ["RAIDER 150"],
+        Modenas: ["KRISS 110", "KARISMA 125"],
+        Benelli: ["PANAREA 125"],
+        SYM: ["VF3i"],
+        WMOTO: ["EXTREME 150i"]
+        };
+        
+        // Form drop-down for models based on brands
+        function populateModels() {
+            var brandSelect = document.getElementById("brand");
+            var modelSelect = document.getElementById("model");
+            selectedBrand = brandSelect.value; // Save selected brand
+                        
+            // Clear previous options
+            modelSelect.innerHTML = '<option value="">Select Model</option>';
+
+            if (selectedBrand !== "") {
+                // Populate models based on selected brand
+                var models = modelsByBrand[selectedBrand];
+                models.forEach(function(model) {
+                    var option = document.createElement("option");
+                    option.text = model;
+                    option.value = model;
+                    modelSelect.add(option);
+                });
+            }   
+            
+            // Log selected brand to console
+            //console.log("Selected brand:", selectedBrand);
+        }
+
         grecaptcha.ready(() => {
             console.log('grecaptcha is ready');
         })

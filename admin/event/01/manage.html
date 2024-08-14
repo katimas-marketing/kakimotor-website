@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" href="/assets/img/Favicon-Latest.png">
+      <link rel="stylesheet" href="admin.css">
+      <link rel="stylesheet" href="popup-1.css">
+
+      <!-- Google Recaptcha -->
+      <script src="https://www.google.com/recaptcha/api.js?render=6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_"></script>
+  </head>
+
+  <body>
+    <div class="admin-container">
+      <div id="options" class="form-wrapper">
+        <div class="radio-check-label" id="color">
+          <span class="label">Choose your theme</span>
+          <div class="input-wrapper">
+            <label class="radio" id="dark">
+              <input type="radio" name="color" value="dark"/>
+              <span>Dark version</span>
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <label class="radio" id="light">
+              <input type="radio" name="color" value="light"/>
+              <span>Light version</span>
+            </label>
+          </div>
+          <div class="input-wrapper">
+            <label class="radio" id="none">
+              <input type="radio" name="color" value="none"/>
+              <span>Oh boy, your design suxx. Giv' me a clean version.</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <form id="adminForm1">
+          <label class="text">
+            <span>Referral Code / TikTok Username:</span>
+            <div class="input-wrapper">
+              <input id="referralCodeForm1" type="text" required/> 
+            </div>
+          </label>
+
+          <label class="text">
+            <span>Activated By:</span>
+            <div class="input-wrapper">
+              <input id="activateByForm1" type="text" value="B & M" required/> 
+            </div>
+          </label>
+
+          <label class="text">
+            <span>Admin Passcode:</span>
+            <div class="input-wrapper">
+              <input type="password" id="passwordForm1" required/>
+              <input type="checkbox" id="togglePasswordForm1" class="shw-pass">Show Passcode
+            </div>
+          </label>
+      
+        <!--  <label class="multiple">  
+            <span>Multiple</span>
+            <div class="input-wrapper">
+              <select class="multiple" size="3">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>    
+              </select>  
+            </div>
+          </label>
+          <label class="text">
+            <span>Some more information and also a label with a lot of text. So resize your browser and see whats happening...</span>
+            <div class="input-wrapper">
+              <textarea>Write, some text here  </textarea> 
+            </div>
+          </label>
+          
+          <div class="radio-check-label">
+            <span class="label">Do you like this?</span>
+            <div class="input-wrapper">
+              <label class="radio" for="yes">
+                <input type="radio" name="foo" value="yes" id="yes"/>
+                <span>Yes, please</span>
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <label class="radio" for="no" >
+                <input type="radio" name="foo" value="no" id="no"/>
+                <span>No, thanks</span>
+              </label>
+            </div>
+            <div class="input-wrapper">    
+              <label class="radio" for="maybe" for="maybe">
+                <input type="radio" name="foo" value="maybe" id="maybe"/>
+                <span>Well, maybe</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="radio-check-label">
+            <span class="label">Please check all</span>
+            <div class="input-wrapper">
+              <label class="checkbox" for="accept">
+                <input type="checkbox" name="accept" id="accept"/>
+                <span>Okay, I accept all u want</span>
+              </label>
+            </div>
+            <div class="input-wrapper">
+              <label class="checkbox" for="spam" >
+                <input type="checkbox" name="spam" id="spam"/>
+                <span>Yes, send me all your spam.</span>
+              </label>
+            </div>
+            <div class="input-wrapper">  
+              <label class="checkbox" for="toolbars" >
+                <input type="checkbox" name="toolbars" id="toolbars"/>
+                <span>Install 1000 toolbars and add all available plugins to my browser</span>
+              </label>
+            </div>
+          </div> -->
+
+          <div class="input-btn-custom">
+            <input id="submitButtonForm1" type="submit" name="submit" value="Submit"/>
+            <!-- <input type="reset" name="reset" value="Reset"/> -->
+          </div>
+          <!-- <div class="clear"></div> -->
+        </form>
+      </div>
+
+
+      <div class="form-wrapper form-wrapper-dl">
+        <label class="dropdown">
+          <span>Choose File</span>
+          <div class="input-wrapper">
+            <select id="FileOptionForm2" size="1" required>
+              <option>-- Please choose --</option>
+              <option value="1">All Participants</option>
+              <option value="2">All Activated Participants / Referral Codes</option>
+              <option value="3">Public Users who has applied for Referral Code</option>    
+            </select>
+          </div>
+        </label>
+        <label class="text">
+          <span>Download Passcode:</span>
+          <div class="input-wrapper">
+            <input type="password" id="passwordForm2" required/>
+            <input type="checkbox" id="togglePasswordForm2" class="shw-pass">Show Passcode
+          </div>
+        </label>
+        <div class="input-btn-custom">
+          <input id="submitBtnForm2" type="submit" name="submit" value="Download CSV"/>
+        </div>
+      </div>
+    
+      <div class="footer">
+        <span class="">* Beta Version - Designed For Internal Use Only </span>
+      </div>
+    </div>
+    
+    <!-- Pop Up on Right Side -->
+    <div class="contest-pop-up">
+      <div class="pop-inner-1">
+        <div class="pop-inner-txt-1">
+            Contest
+        </div>
+      </div>
+      <div class="pop-inner-2">Testing Details</div>
+    </div>
+    
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="admin.js"></script>
+    <script src="popup-1.js"></script>
+
+    <script>
+        // Toggle Password
+        const togglePasswordForm1 = document.querySelector('#togglePasswordForm1');
+        const passwordForm1 = document.querySelector('#passwordForm1');
+        togglePasswordForm1.addEventListener('change', function (e) {
+          const type = passwordForm1.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordForm1.setAttribute('type', type);
+        });
+
+        const togglePasswordForm2 = document.querySelector('#togglePasswordForm2');
+        const passwordForm2 = document.querySelector('#passwordForm2');
+        togglePasswordForm2.addEventListener('change', function (e) {
+          const type = passwordForm2.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordForm2.setAttribute('type', type);
+        });
+    </script>
+
+    <script>
+      // Update Referral Code Form
+      document.addEventListener('DOMContentLoaded', function () {
+        const adminForm1 = document.getElementById('adminForm1');
+        const referralCodeForm1 = document.getElementById('referralCodeForm1');
+        const activateByForm1 = document.getElementById('activateByForm1');
+        const adminPasscode = document.getElementById('passwordForm1');
+        const submitButtonForm1 = document.getElementById('submitButtonForm1');
+
+        async function submitForm() {
+          try {
+            // Validate Form
+            const referralCodeForm1Val = referralCodeForm1.value;
+            const activateByForm1Val = activateByForm1.value;
+            const passcodeForm1Val = adminPasscode.value;
+
+            referralCodeForm1.classList.remove('invalid');
+            activateByForm1.classList.remove('invalid');
+            adminPasscode.classList.remove('invalid');
+    
+            if (referralCodeForm1Val == "") {
+              referralCodeForm1.classList.add('invalid');
+              referralCodeForm1.focus();
+              alert("Please enter Referral Code");
+              return;
+            }
+            if (activateByForm1Val == "") {
+              activateByForm1.classList.add('invalid');
+              activateByForm1.focus();
+              alert("Please enter Activated By");
+              return;
+            }
+            if (passcodeForm1Val == "") {
+              adminPasscode.classList.add('invalid');
+              adminPasscode.focus();
+              alert("Please enter the Admin Passcode.");
+              return;
+            }
+
+            // Execute reCAPTCHA
+            const tokenForm1 = await grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' });
+
+            // Gather form data
+            const formData = JSON.stringify({ 
+                                              referralCode: referralCodeForm1Val, 
+                                              activateBy: activateByForm1Val, 
+                                              adminPasscode: passcodeForm1Val, 
+                                              token: tokenForm1
+                                            })
+
+            // Send AJAX request
+            const response = await fetch('http://localhost:3535/activReferralCode', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: formData
+            });
+
+            if (!response.ok) {
+              const errorTextForm1 = await response.text();
+              const errorJsonForm1 = JSON.parse(errorTextForm1);
+              throw new Error(errorJsonForm1.message);
+            }
+
+            const result = await response.json();
+            console.log('Form 1 submission successful:', result);
+            alert(result.message + "\n\n *Please double check google sheet auto updated if necessary. ");
+          } 
+          catch (error) {
+            // console.log('Error during form 1 submission:', error.message);
+            alert(`Error Submit Form: ${error.message}`);
+          }
+          finally {
+            submitButtonForm1.disabled = false; // Re-enable the submit button
+          }
+        }
+
+        adminForm1.addEventListener('submit', function (event) {
+          event.preventDefault();
+          submitButtonForm1.disabled = true;
+          console.log("form 1 submit");
+          submitForm();
+        });
+      });
+    </script>
+
+    <script>
+      // Download CSV Form
+      const downloadBtn = document.querySelector('#submitBtnForm2');
+      const fileTypeSelect = document.querySelector('#FileOptionForm2');
+      const downloadPasscode = document.querySelector('#passwordForm2');
+  
+      downloadBtn.addEventListener('click', async function (e) {
+          e.preventDefault();
+  
+          const fileType = fileTypeSelect.value;
+          const passcode = downloadPasscode.value;
+
+          let fileTypeName = "error";
+          if (fileType === "1") {
+            fileTypeName = "All Participants.csv"
+          } else if (fileType === "2") {
+            fileTypeName = "Activated Participants.csv"
+          } else if (fileType === "3") {
+            fileTypeName = "All Public Applied Code.csv"
+          }
+
+          fileTypeSelect.classList.remove('invalid');
+          downloadPasscode.classList.remove('invalid');
+  
+          if (fileType === "-- Please choose --") {
+              fileTypeSelect.classList.add('invalid');
+              fileTypeSelect.focus();
+              alert("Please choose a file type.");
+              return;
+          }
+          if (passcode == "") {
+            downloadPasscode.classList.add('invalid');
+            downloadPasscode.focus();
+            alert("Please enter the download passcode.");
+            return;
+          }
+  
+          grecaptcha.ready(async function() {
+              const token = await grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'download' });
+  
+              try {
+                  const response = await fetch('http://localhost:3535/downloadCSVFile', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({ fileType, passcode, token })
+                  });
+  
+                  if (response.ok) {
+                      const blob = await response.blob();
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.style.display = 'none';
+                      a.href = url;
+                      a.download = fileTypeName;
+                      document.body.appendChild(a);
+                      a.click();
+                      window.URL.revokeObjectURL(url);
+                  } else {
+                    const errorText = await response.text();
+                    const errorJson = JSON.parse(errorText);
+                    console.log("Error text:", errorJson.message);
+                    alert(`Error: ${errorJson.message}`);
+                  }
+              } catch (error) {
+                  console.error('Error:', error);
+                  alert('Error generating CSV');
+              }
+          });
+      });
+    </script>
+  </body>
+
+</html>

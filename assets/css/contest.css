@@ -1,0 +1,90 @@
+.img-contest-1 {
+    max-width: 80%;
+}
+
+.formbold-form-input-custom {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+/* input::placeholder {
+    color: blue;
+} */
+
+.sign-up-note {
+    font-size: 13px;
+}
+
+.badge-date-custom {
+    font-size: 14px;
+    /* background-color: #f17941 !important; */
+    background: linear-gradient(90deg, #c34ce4, #f17941, #3b9fd1);
+}
+
+/* .mixes-color-1 {
+    background: linear-gradient(90deg, #c34ce4, #f17941, #3b9fd1) !important;
+} */
+
+.stars-elem {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: -2px;
+  }
+  @media screen and (max-width: 991px) {
+    .stars-elem {
+      top: 3px;
+    }
+  }
+  svg.star-icon.f {
+    transform-origin: bottom center;
+    animation: 1.4s ease-in-out both infinite star-show;
+  }
+  .star-icon.f {
+    left: 2px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+  }
+  svg.star-icon.s {
+    transform-origin: left center;
+    animation: 1.4s ease-in-out .2s both infinite star-show;
+  }
+  .star-icon.s {
+    top: 2px;
+    right: 3px;
+    width: 4px;
+    height: 4px;
+  }
+  svg.star-icon.th {
+    animation: 1.4s ease-in-out .3s both infinite star-show;
+  }
+  .star-icon.th {
+    right: 1px;
+    bottom: 1px;
+    width: 7px;
+    height: 8px;
+  }
+  .star-icon.line {
+    fill: #ffc658;
+  }
+  @keyframes star-show {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(1.25);
+    }
+  
+    25% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    75% {
+      opacity: 0;
+    }
+  }

@@ -508,6 +508,7 @@
                 success: function (data) {
                     console.log('Success', data);
                     $('#participationForm').hide();
+                    $('#Unsuccessfully-message').hide();
                     $('#success-message').show();
                     resetForm();
                 },
@@ -542,6 +543,7 @@
             if (validateForm()) {
                 grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
                     var form = $('#participationForm');
+                    form.find('input[name="token"]').remove();
                     form.prepend(`<input type="hidden" name="token" value="${token}" />`);
                     sendData(form.serialize(), quiet);
                 })

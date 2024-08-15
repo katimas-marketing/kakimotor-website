@@ -568,6 +568,7 @@
                     // handle the response from the server
                     console.log('Success:', data);
                     $('#redeemForm').hide(); // Hide the form
+                    $('#Unsuccessfully-message').hide(); // Remove previous error
                     $('#success-message').show(); // Show the success message
                     resetForm();
                 },
@@ -599,13 +600,13 @@
         }
 
         function onSubmit(token, quiet = false) {
-            console.log("token", token);
             var form = $('#redeemForm')
             var formValue = form.serialize()
 
             if (validateForm()) {
                 grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
                     var form = $('#redeemForm');
+                    form.find('input[name="token"]').remove();
                     form.prepend(`<input type="hidden" name="token" value="${token}" />`);
                     sendData(form.serialize(), quiet);
                 }).catch((error) => {

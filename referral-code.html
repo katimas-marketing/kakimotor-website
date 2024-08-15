@@ -186,7 +186,7 @@
                         <!-- ==============================
                         The Contact Form Start Here
                         ============================== -->
-                        <form id="subscribeForm" action="/" method="POST">
+                        <form id="redeemForm" action="/" method="POST">
                             <div class="row">
 
                                 <div class="col-sm-6 col-lg-6">
@@ -201,11 +201,11 @@
                                 <!-- IC No here test -->
                                 <div class="col-md-12 col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" name="icno" id="icno {12}"
+                                        <input type="text" name="icno" id="icno"
                                             data-error="Please enter your IC number" class="form-control"
                                             placeholder="IC No. Example: 900123131234" input mode="numeric">
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="phoneError" style="color: red;"></div>
+                                        <div class="error-message" id="icnoError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -218,10 +218,10 @@
                                     </div>
                                 </div>
                                 
-                                <!-- referral code test-->
+                                <!-- -->
                                 <div class="col-md-12 col-lg-6">
                                     <div class="form-group">
-                                        <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}"
+                                        <input type="tel" name="phone" id="phone" required pattern="[0-9]{10}[0-9]{10}"
                                             data-error="Please enter your number" class="form-control"
                                             placeholder="Phone No." input mode="numeric">
                                         <div class="help-block with-errors"></div>
@@ -231,10 +231,10 @@
 
                                 <div class="col-sm-6 col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" name="referral-code" id="refcode" class="form-control" required
+                                        <input type="text" name="refcode" id="refcode" class="form-control" required
                                             data-error="Please enter a valid referral code" placeholder="Referral Code">
                                         <div class="help-block with-errors"></div>
-                                        <div class="error-message" id="nameError" style="color: red;"></div>
+                                        <div class="error-message" id="refcodeError" style="color: red;"></div>
                                     </div>
                                 </div>
 
@@ -264,6 +264,7 @@
                                 <div class="col-md-12 col-lg-12">
 
                                     <button class="contact-btn btn g-recaptcha"
+                                    type="submit"
                                         data-sitekey="6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_" data-callback='onSubmit'
                                         data-action='submit'>Submit</button>
 
@@ -281,7 +282,7 @@
                         </div>
 
                         <div id="Unsuccessfully-message" style="display: none; color: red;">
-                            From Unsuccessfully send. Please try again.
+                            Form Unsuccessfully send. Please try again.
                         </div>
                         <!-- ==============================
                         The Contact Form End Here
@@ -473,7 +474,7 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
-    <script src="assets/js/language-switch-contact.js"></script>
+    <!-- <script src="assets/js/language-switch-contact.js"></script> -->
 
     <script>
 
@@ -507,8 +508,8 @@
             } else {
                 displayErrorMessage('name', ''); // Clear error message
             }
-
             const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
             if (emailInput.value.trim() === '') {
                 displayErrorMessage('email', 'This field is required.');
                 isValid = false;
@@ -519,6 +520,13 @@
                 displayErrorMessage('email', ''); // Clear error message
             }
 
+            if (icnoInput.value.trim() === '') {
+                displayErrorMessage('icno', 'This field is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('icno', '');
+            }
+
             if (phoneInput.value.trim() === '') {
                 displayErrorMessage('phone', 'This field is required.');
                 isValid = false;
@@ -526,11 +534,11 @@
                 displayErrorMessage('phone', ''); // Clear error message
             }
 
-            if (messageInput.value.trim() === '') {
-                displayErrorMessage('message', 'This field is required.');
+            if (referralcodeInput.value.trim() === '') {
+                displayErrorMessage('refcode', 'This field is required');
                 isValid = false;
             } else {
-                displayErrorMessage('message', ''); // Clear error message
+                displayErrorMessage('refcode', '');
             }
 
             return isValid;
@@ -552,22 +560,33 @@
 
         function sendData(formValue, quiet = false) {
 
+// url: 'https://scripts.katimas.brixmind.com/form',
+
             $.ajax({
-                url: 'https://scripts.katimas.brixmind.com/redeemForm',
+                url: 'http://localhost:3535/redeemForm',
                 type: 'POST',
                 data: formValue,
                 success: function (data) {
 
                     // handle the response from the server
                     console.log('Success:', data);
-                    $('#subscribeForm').hide(); // Hide the form
+                    $('#redeemForm').hide(); // Hide the form
                     $('#success-message').show(); // Show the success message
                     resetForm();
                 },
                 error: function (xhr, status, error) {
                     if (!quiet) {
+                        //error message
                         console.error('An error occurred:', error);
-                        $('#Unsuccessfully-message').show(); // Show the unsuccessfully message
+                        if (xhr.responseJSON && xhr.responseJSON.errormessage) {
+                            let errorMessage = "Redeem Failed: " + xhr.responseJSON.errormessage;
+                            console.log('errorMessage', errorMessage);
+                            $('#Unsuccessfully-message').text(errorMessage).show();
+                        }
+                        else {
+                            let errorMessage = "The redeem was Unsuccessful. Please refresh and try again.";
+                            $('#Unsuccessfully-message').text(errorMessage).show();
+                        }
                     }
                 }
             });
@@ -575,7 +594,7 @@
 
 
         function resetForm() {
-            $(':input', '#subscribeForm')
+            $(':input', '#redeemForm')
                 .not(':button, :submit, :reset, :hidden')
                 .val('')
                 .prop('checked', false)
@@ -583,14 +602,15 @@
         }
 
         function onSubmit(token, quiet = false) {
-            var form = $('#subscribeForm')
+            console.log("token", token);
+            var form = $('#redeemForm')
             var formValue = form.serialize()
 
             if (validateForm()) {
                 grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-                    var form = $('#subscribeForm');
-                    form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
-                    sendData(formValue, quiet);
+                    var form = $('#redeemForm');
+                    form.prepend(`<input type="hidden" name="token" value="${token}" />`);
+                    sendData(form.serialize(), quiet);
                 }).catch((error) => {
                     console.log('an error occurred executing grecaptcha', error);
                 });
@@ -598,14 +618,18 @@
             }
         }
 
+        // $(document).ready(() => {
+        //     grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
+        //         var form = $('#redeeemForm');
+        //         form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
+        //     }).catch((error) => {
+        //         console.log('an error occurred executing grecaptcha', error);
+        //     });
+        // })
+
         $(document).ready(() => {
-            grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' }).then((token) => {
-                var form = $('#subscribeForm');
-                form.prepend(`<input type=\'hidden\' id=\'token\' name=\'token\' value=\'${token}\'/>`);
-            }).catch((error) => {
-                console.log('an error occurred executing grecaptcha', error);
-            });
-        })
+            $('.error_message').hide();
+        });
 
     </script>
 </body>

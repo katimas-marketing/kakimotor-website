@@ -559,11 +559,8 @@
         }
 
         function sendData(formValue, quiet = false) {
-
-// url: 'https://scripts.katimas.brixmind.com/form',
-
             $.ajax({
-                url: 'http://localhost:3535/redeemForm',
+                url: 'https://scripts.katimas.brixmind.com/redeemForm',
                 type: 'POST',
                 data: formValue,
                 success: function (data) {

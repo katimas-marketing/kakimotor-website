@@ -123,10 +123,41 @@
           </div> -->
 
           <div class="input-btn-custom">
-            <input id="submitButtonForm1" type="submit" name="submit" value="Submit"/>
+            <input id="submitButtonForm1" type="submit" name="submit" value="Activate"/>
             <!-- <input type="reset" name="reset" value="Reset"/> -->
           </div>
           <!-- <div class="clear"></div> -->
+        </form>
+      </div>
+
+
+      <div class="form-wrapper form-wrapper-dl">
+        <form id="adminForm1a">
+          <label class="text">
+            <span>TikTok Username:</span>
+            <div class="input-wrapper">
+              <input id="tikTokUsernameForm1a" type="text" required/> 
+            </div>
+          </label>
+
+          <label class="text">
+            <span>New Video Link:</span>
+            <div class="input-wrapper">
+              <input id="newVideoLinkForm1a" type="text" required/> 
+            </div>
+          </label>
+
+          <label class="text">
+            <span>Passcode:</span>
+            <div class="input-wrapper">
+              <input type="password" id="passwordForm1a" required/>
+              <input type="checkbox" id="togglePasswordForm1a" class="shw-pass">Show Passcode
+            </div>
+          </label>
+
+          <div class="input-btn-custom">
+            <input id="submitButtonForm1a" type="submit" name="submit" value="Update Video Link"/>
+          </div>
         </form>
       </div>
 
@@ -181,6 +212,13 @@
         togglePasswordForm1.addEventListener('change', function (e) {
           const type = passwordForm1.getAttribute('type') === 'password' ? 'text' : 'password';
           passwordForm1.setAttribute('type', type);
+        });
+
+        const togglePasswordForm1a = document.querySelector('#togglePasswordForm1a');
+        const passwordForm1a = document.querySelector('#passwordForm1a');
+        togglePasswordForm1a.addEventListener('change', function (e) {
+          const type = passwordForm1a.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordForm1a.setAttribute('type', type);
         });
 
         const togglePasswordForm2 = document.querySelector('#togglePasswordForm2');
@@ -274,6 +312,93 @@
           submitButtonForm1.disabled = true;
           console.log("form 1 submit");
           submitForm();
+        });
+      });
+    </script>
+
+    <script>
+      // Update New Video Link Form
+      document.addEventListener('DOMContentLoaded', function () {
+        const adminForm1a = document.getElementById('adminForm1a');
+        const tiktokUsernameForm1a = document.getElementById('tikTokUsernameForm1a');
+        const newVideoLinkForm1a = document.getElementById('newVideoLinkForm1a');
+        const videoPasscode = document.getElementById('passwordForm1a');
+        const submitButtonForm1a = document.getElementById('submitButtonForm1a');
+
+        async function submitForm1a() {
+          try {
+            // Validate Form
+            const tikTokUsernameForm1aVal = tiktokUsernameForm1a.value;
+            const newVideoLinkForm1aVal = newVideoLinkForm1a.value;
+            const passcodeForm1aVal = videoPasscode.value;
+
+            tiktokUsernameForm1a.classList.remove('invalid');
+            newVideoLinkForm1a.classList.remove('invalid');
+            videoPasscode.classList.remove('invalid');
+
+            if (tikTokUsernameForm1aVal == "") {
+              tiktokUsernameForm1a.classList.add('invalid');
+              tiktokUsernameForm1a.focus();
+              alert("Please enter TikTok Username");
+              return;
+            }
+            if (newVideoLinkForm1aVal == "") {
+              newVideoLinkForm1a.classList.add('invalid');
+              newVideoLinkForm1a.focus();
+              alert("Please enter New Video Link");
+              return;
+            }
+            if (passcodeForm1aVal == "") {
+              videoPasscode.classList.add('invalid');
+              videoPasscode.focus();
+              alert("Please enter the Passcode.");
+              return;
+            }
+
+            // Execute reCAPTCHA
+            const tokenForm1a = await grecaptcha.execute('6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_', { action: 'submit' });
+
+            // Gather form data
+            const formData = JSON.stringify({ 
+                                              tikTokUsername: tikTokUsernameForm1aVal, 
+                                              newVideoLink: newVideoLinkForm1aVal, 
+                                              videoPasscode: passcodeForm1aVal, 
+                                              token: tokenForm1a
+                                            })
+
+            // Send AJAX request
+            const response = await fetch('https://scripts.katimas.brixmind.com/updateVideoLink', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: formData
+            });
+
+            if (!response.ok) {
+              const errorTextForm1a = await response.text();
+              const errorJsonForm1a = JSON.parse(errorTextForm1a);
+              throw new Error(errorJsonForm1a.message);
+            }
+
+            const result = await response.json();
+            console.log('Form 1a submission successful:', result);
+            alert(result.message + "\n\n *New Video Link Appended to google sheet new row. ");
+          } 
+          catch (error) {
+            // console.log('Error during form 1a submission:', error.message);
+            alert(`Error Update Video Link: ${error.message}`);
+          }
+          finally {
+            submitButtonForm1a.disabled = false; // Re-enable the submit button
+          }
+        }
+
+        adminForm1a.addEventListener('submit', function (event) {
+          event.preventDefault();
+          submitButtonForm1a.disabled = true;
+          console.log("form 1a submit");
+          submitForm1a();
         });
       });
     </script>

@@ -29,6 +29,12 @@
   text-decoration: underline;
 }
 
+@media screen and (max-width: 991px) {
+  .form-check-label-sm {
+    font-size: 12px;
+  }
+}
+
 .add-multi-color {
   background: linear-gradient(90deg, #fa7003, #30358c) !important;
   -webkit-background-clip: text !important;

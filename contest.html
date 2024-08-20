@@ -100,14 +100,32 @@
                             <li class="nav-item">
                                 <a href="our-bikes" class="nav-link" id="textOurBike">Our Bikes&nbsp;</a>
                             </li>
-                            <li class="nav-item"> <a href="contact-us" class="nav-link" id="textContactUs">Contact
-                                    Us</a> </li>
+                            <li class="nav-item"> <a href="contact-us" class="nav-link" id="textContactUs">Contact Us</a> </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="stars-elem">
+                                    <svg class="star-icon f" viewBox="0 0 11 11">
+                                        <path class="star-icon f line" d="M5.5 0A7.164 7.164 0 0 0 11 5.5 7.164 7.164 0 0 0 5.5 11 7.164 7.164 0 0 0 0 5.5 7.164 7.164 0 0 0 5.5 0Z"></path>
+                                    </svg>
+                                    <svg class="star-icon s" viewBox="0 0 4 4">
+                                        <path class="star-icon s line" d="M2 0a2.605 2.605 0 0 0 2 2 2.605 2.605 0 0 0-2 2 2.605 2.605 0 0 0-2-2 2.605 2.605 0 0 0 2-2Z"></path>
+                                    </svg>
+                                    <svg class="star-icon th" viewBox="0 0 7 8">
+                                        <path class="star-icon th line" d="M3.5 0C3.877 2.004 5.246 3.57 7 4c-1.754.43-3.123 1.996-3.5 4C3.123 5.996 1.754 4.43 0 4c1.754-.43 3.123-1.996 3.5-4Z"></path>
+                                    </svg>
+                                </span>
+                                Impian Malaysia Contest
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="contest.html">JOIN</a></li>
+                                  <li><a class="dropdown-item" href="referral-code.html">REDEEM</a></li>
+                                </ul>
+                            </li>
                             <li class="nav-item">&nbsp;</li>
 
                             <li class="nav-item" id="lang_switch">
                                 <div class="switch">
-                                    <input id="language-toggle" class="check-toggle check-toggle-round-flat"
-                                        type="checkbox">
+                                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
                                     <label for="language-toggle"></label>
                                     <span class="on">EN</span>
                                     <span class="off">BM</span>
@@ -128,8 +146,8 @@
     <section class="pt-100 pb-70">
         <div class="container h-100">
             <div class="section-title">
-                <h2 id="textCheckOut">Check Out Our Competition</h2>
-                <span class="badge bg-secondary badge-date-custom mt-2">
+                <h2 id="textContestTitle">Check Out Our Competition</h2>
+                <span id="textContestDate" class="badge bg-secondary badge-date-custom mt-2">
                     Date: 29 Aug - 14 Sept 2024
                 </span>
             </div>
@@ -139,7 +157,7 @@
                         <div class="card-body p-md-4">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                                    <p class="text-center h1 mx-1 mx-md-4">Sign up</p>
+                                    <p id="textContestFormTitle" class="text-center h1 mx-1 mx-md-4">Sign up</p>
                                     <form class="mx-1 mx-md-4" id="participationForm">
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -155,12 +173,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <label for="phone" class="formbold-form-label" id="Mobile"> Phone No: </label>
+                                                <label for="phone" class="formbold-form-label" id="MobileLabel"> Phone No: </label>
                                                 <input class="formbold-form-input formbold-form-input-custom" type="text" name="phone" id="phone" placeholder="0123456789" inputmode="numeric" />
                                                 <div class="error-message" id="phoneError" style="color: red;"></div>
                                             </div>
                                             <div class="col-sm-6">
-                                                <label for="email" class="formbold-form-label" id="Email"> Email:</label>
+                                                <label for="email" class="formbold-form-label" id="EmailLabel"> Email:</label>
                                                 <input class="formbold-form-input formbold-form-input-custom" type="text" name="email" id="email" placeholder="johnDeo@gmail.com" inputmode="email" />
                                                 <div class="error-message" id="emailError" style="color: red;"></div>
                                             </div>
@@ -196,7 +214,7 @@
                                             <div class="col-12">
                                                 <input class="form-check-input me-2" type="checkbox" id="termsCheckbox" />
                                                 <label class="form-check-label form-check-label-sm" for="termsCheckboxLabel">
-                                                    I agree all statements in <a href="javascript:void(0)" class="form-check-tnc">Terms and Conditions</a>.
+                                                    <span id="tncLabel1">I agree all statements in </span> <a href="javascript:void(0)" class="form-check-tnc"><span id="tncLabel2"> Terms and Conditions</span></a>.
                                                 </label>
                                             </div>
                                             <div class="error-message col-12" id="termsCheckboxError" style="color: red;"></div>
@@ -229,7 +247,7 @@
                 </div>
             </div>
             <div class="text-center text-danger">
-                <em class="sign-up-note">*Note: Please whatsapp us on 014-6243375 if you face any issue during register.</em>
+                <em class="sign-up-note" id="contestNote">*Note: Please whatsapp us on 014-6243375 if you face any issue during register.</em>
             </div>
         </div>
     </section>
@@ -411,7 +429,7 @@
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
     <!-- Language-switch JS -->
-    <!-- <script src="assets/js/language-switch-service.js"></script> -->
+    <script src="assets/js/language-switch-contest.js"></script>
 
     <script>
         grecaptcha.ready(() => {

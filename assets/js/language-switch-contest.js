@@ -17,6 +17,8 @@ const ContestFormTnC1 = document.getElementById('tncLabel1');
 const ContestFormTnC2 = document.getElementById('tncLabel2');
 const ContestFormSubmitBtn = document.getElementById('SendBtn');
 const ContestFormNote = document.getElementById('contestNote');
+const NavbarContest = document.getElementById('contestNavLabel');
+const NavbarContestJoin = document.getElementById('contestJoinNavLabel');
 
 // Check the current language preference and update the switch accordingly
 if (localStorage.getItem('language') === 'bm') {
@@ -57,7 +59,7 @@ languageToggle.addEventListener('change', function() {
 
 function updateContest(language) {
   if (language === 'bm') {
-    ContestTitle.textContent = 'Sertailah Pertandingan Kami';
+    ContestTitle.textContent = 'Sertailah Pertandingan Impian Malaysia';
     ContestDate.textContent = 'Tarikh: 29 Ogos - 14 Sept 2024';
     ContestFormTitle.textContent = 'Daftar';
     ContestFormNameAsIc.textContent = 'Nama Penuh (ikut NRIC):';
@@ -73,8 +75,10 @@ function updateContest(language) {
     ContestFormTnC2.style.fontSize = '12px';
     ContestFormSubmitBtn.textContent = 'Daftar';
     ContestFormNote.textContent = '*Nota: Sila WhatsApp kami di 014-6243375 jika anda menghadapi sebarang masalah semasa pendaftaran.';
+    NavbarContest.textContent = 'Pertandingan Impian Malaysia';
+    NavbarContestJoin.textContent = 'Sertai';
   } else {
-    ContestTitle.textContent = 'Check Out Our Competition';
+    ContestTitle.textContent = 'Join the Impian Malaysia Contest';
     ContestDate.textContent = 'Date: 29 Aug - 14 Sept 2024';
     ContestFormTitle.textContent = 'Sign up';
     ContestFormNameAsIc.textContent = 'Full Name (as in NRIC):';
@@ -86,10 +90,12 @@ function updateContest(language) {
     ContestFormVideoLink.textContent = 'Video Link:';
     ContestFormTnC1.textContent = 'I agree all statements in ';
     ContestFormTnC2.textContent = 'Terms and Conditions';
-    ContestFormTnC1.style.fontSize = '14px';
-    ContestFormTnC2.style.fontSize = '14px';
+    ContestFormTnC1.style.fontSize = '12px';
+    ContestFormTnC2.style.fontSize = '12px';
     ContestFormSubmitBtn.textContent = 'Register';
     ContestFormNote.textContent = '*Note: Please whatsapp us on 014-6243375 if you face any issue during register.';
+    NavbarContest.textContent = 'Impian Malaysia Contest';
+    NavbarContestJoin.textContent = 'Join';
   }
 }
 

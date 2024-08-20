@@ -24,7 +24,11 @@
 /* .mixes-color-1 {
     background: linear-gradient(90deg, #c34ce4, #f17941, #3b9fd1) !important;
 } */
- 
+
+.form-check-tnc {
+  text-decoration: underline;
+}
+
 .add-multi-color {
   background: linear-gradient(90deg, #fa7003, #30358c) !important;
   -webkit-background-clip: text !important;

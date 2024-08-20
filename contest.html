@@ -167,6 +167,21 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
+                                                <label for="location" class="formbold-form-label" id="LocationLabel">Location:</label>
+                                                <select class="formbold-form-input formbold-form-input-custom" name="location" id="location" required>
+                                                    <option value="" disabled selected>Select Location</option>
+                                                    <option value="kuching">Kuching</option>
+                                                    <option value="samarahan">Samarahan</option>
+                                                    <option value="bau">Bau</option>
+                                                    <option value="lundu">Lundu</option>
+                                                    <option value="serian">Serian</option>
+                                                    <option value="others">Others</option>
+                                                </select>
+                                                <div class="error-message" id="locationError" style="color: red;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
                                                 <label for="tiktokusername" class="formbold-form-label" id="TikTokUsernameLabel"> TikTok Username: </label>
                                                 <input class="formbold-form-input formbold-form-input-custom" type="text" name="tiktokusername" id="tiktokusername" placeholder="Hello_John_Doe_Example" required/>
                                                 <div class="error-message" id="tiktokusernameError" style="color: red;"></div>
@@ -181,7 +196,7 @@
                                             <div class="col-12">
                                                 <input class="form-check-input me-2" type="checkbox" id="termsCheckbox" />
                                                 <label class="form-check-label" for="termsCheckboxLabel">
-                                                    I agree all statements in <a href="javascript:void(0)">Terms of service</a>
+                                                    I agree all statements in <a href="javascript:void(0)" class="form-check-tnc">Terms and Conditions</a>.
                                                 </label>
                                             </div>
                                             <div class="error-message col-12" id="termsCheckboxError" style="color: red;"></div>
@@ -424,6 +439,7 @@
             const icnoInput = document.getElementById('icno');
             const phoneInput = document.getElementById('phone');
             const emailInput = document.getElementById('email');
+            const locationInput = document.getElementById('location');
             const tiktokusernameInput = document.getElementById('tiktokusername');
             const videolinkInput = document.getElementById('videolink');
             const termsCheckboxInput = document.getElementById('termsCheckbox');
@@ -458,6 +474,13 @@
                 isValid = false;
             } else {
                 displayErrorMessage('phone', '');
+            }
+            
+            if (locationInput.value.trim() === '') {
+                displayErrorMessage('location', 'This field is required');
+                isValid = false;
+            } else {
+                displayErrorMessage('location', '');
             }
 
             if (tiktokusernameInput.value.trim() === '') {

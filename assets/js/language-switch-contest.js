@@ -19,6 +19,7 @@ const ContestFormSubmitBtn = document.getElementById('SendBtn');
 const ContestFormNote = document.getElementById('contestNote');
 const NavbarContest = document.getElementById('contestNavLabel');
 const NavbarContestJoin = document.getElementById('contestJoinNavLabel');
+const ContestSuccessMessage = document.getElementById('success-message');
 
 // Check the current language preference and update the switch accordingly
 if (localStorage.getItem('language') === 'bm') {
@@ -77,6 +78,7 @@ function updateContest(language) {
     ContestFormNote.textContent = '*Nota: Sila WhatsApp kami di 014-6243375 jika anda menghadapi sebarang masalah semasa pendaftaran.';
     NavbarContest.textContent = 'Pertandingan Impian Malaysia';
     NavbarContestJoin.textContent = 'Sertai';
+    ContestSuccessMessage.textContent = "Terima kasih kerana mendaftar! Sila semak emel anda untuk pengesahan video. Sila hubungi kami jika anda tidak menerima sebarang emel dalam masa 10 minit.";
   } else {
     ContestTitle.textContent = 'Join the Impian Malaysia Contest';
     ContestDate.textContent = 'Date: 29 Aug - 14 Sept 2024';
@@ -96,6 +98,7 @@ function updateContest(language) {
     ContestFormNote.textContent = '*Note: Please whatsapp us on 014-6243375 if you face any issue during register.';
     NavbarContest.textContent = 'Impian Malaysia Contest';
     NavbarContestJoin.textContent = 'Join';
+    ContestSuccessMessage.textContent = "Thanks for register! Please check your email for video verification. Please contact us if you didn't receive any email within 10 minutes.";
   }
 }
 

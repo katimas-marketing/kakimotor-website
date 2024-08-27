@@ -289,7 +289,7 @@
                                     <button class="contact-btn btn g-recaptcha"
                                     type="submit"
                                         data-sitekey="6LdmCn0nAAAAANC8dQDeC3bko97zlloPkuFcyP7_" data-callback='onSubmit'
-                                        data-action='submit'>Submit</button>
+                                        data-action='submit' id="SendBtnRedeem">Submit</button>
 
                                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                                     <div class="clearfix"></div>
@@ -603,10 +603,12 @@
                             let errorMessage = "Redeem Failed: " + xhr.responseJSON.errormessage;
                             console.log('errorMessage', errorMessage);
                             $('#Unsuccessfully-message').text(errorMessage).show();
+                            $('#SendBtnRedeem').show();
                         }
                         else {
                             let errorMessage = "The redeem was Unsuccessful. Please refresh and try again.";
                             $('#Unsuccessfully-message').text(errorMessage).show();
+                            $('#SendBtnRedeem').show();
                         }
                     }
                 }
@@ -623,6 +625,7 @@
         }
 
         function onSubmit(token, quiet = false) {
+            $('#SendBtnRedeem').hide();
             var form = $('#redeemForm')
             var formValue = form.serialize()
 
@@ -631,11 +634,14 @@
                     var form = $('#redeemForm');
                     form.find('input[name="token"]').remove();
                     form.prepend(`<input type="hidden" name="token" value="${token}" />`);
+                    $('#SendBtnRedeem').hide();
                     sendData(form.serialize(), quiet);
                 }).catch((error) => {
                     console.log('an error occurred executing grecaptcha', error);
                 });
 
+            } else {
+                $('#SendBtnRedeem').show();
             }
         }
 

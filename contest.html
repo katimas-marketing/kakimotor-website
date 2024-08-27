@@ -559,10 +559,12 @@
                         if (xhr.responseJSON && xhr.responseJSON.errormessage) {
                             let errorMessage = "Registration Failed: " + xhr.responseJSON.errormessage;
                             $('#Unsuccessfully-message').text(errorMessage).show();
+                            $('#SendBtn').show();
                         }
                         else {
                             let errorMessage = "The registration was Unsuccessful. Please refresh and try again.";
                             $('#Unsuccessfully-message').text(errorMessage).show();
+                            $('#SendBtn').show();
                         }
                     }
                 }
@@ -578,6 +580,7 @@
         }
 
         function onSubmit(token, quiet = false) {
+            $('#SendBtn').hide();
             const form = $('#participationForm');
             const formValue = form.serialize();
 
@@ -586,11 +589,14 @@
                     var form = $('#participationForm');
                     form.find('input[name="token"]').remove();
                     form.prepend(`<input type="hidden" name="token" value="${token}" />`);
+                    $('#SendBtn').hide();
                     sendData(form.serialize(), quiet);
                 })
                 .catch((error) => {
                     console.log('An error occurred executing grecaptcha:', error);
                 });
+            } else {
+                $('#SendBtn').show();
             }
         }
 

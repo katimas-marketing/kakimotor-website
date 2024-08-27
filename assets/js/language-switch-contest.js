@@ -1,3 +1,7 @@
+// Default Language
+if (!localStorage.getItem('language')) {
+  localStorage.setItem('language', 'bm');
+}
 
 // Language Toggle Button
 const languageToggle = document.getElementById('language-toggle');

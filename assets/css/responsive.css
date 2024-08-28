@@ -4,6 +4,15 @@
   }
 }
 
+@media only screen and (max-width: 991px) {
+  #lang_switch .switch {
+    display: none;
+  }
+
+  .banner-area {
+    margin-top: 70px;
+  }
+}
 
 @media only screen and (max-width: 767px) {
 
@@ -33,7 +42,8 @@
   /*------ Home One CSS ------*/
   /*-- Navbar --*/
   .mean-container .mean-nav .navbar-nav {
-    height: 320px;  /*--changed from 350px--*/
+    /* height: 320px;  --changed from 350px-- */
+    height: auto;
     overflow-y: scroll;
   }
 

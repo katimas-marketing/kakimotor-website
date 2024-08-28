@@ -231,6 +231,21 @@ function toggleTheme() {
     }
 }
 
+
+//Data Background CSS Js
+$("[data-background").each(function () {
+	$(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
+});
+
+$("[data-width]").each(function () {
+	$(this).css("width", $(this).attr("data-width"));
+});
+
+$("[data-bg-color]").each(function () {
+	$(this).css("background-color", $(this).attr("data-bg-color"));
+});
+
+
 // // Immediately invoked function to set the theme on initial load
 // (function () {
 //     if (localStorage.getItem('audeck_theme') === 'theme-dark') {

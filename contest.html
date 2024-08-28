@@ -101,6 +101,7 @@
                                 <a href="our-bikes" class="nav-link" id="textOurBike">Our Bikes&nbsp;</a>
                             </li>
                             <li class="nav-item"> <a href="contact-us" class="nav-link" id="textContactUs">Contact Us</a> </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="stars-elem">
@@ -117,10 +118,11 @@
                                 <span id="contestNavLabel">Impian Malaysia Contest</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="contest.html" id="contestJoinNavLabel">Join</a></li>
-                                  <li><a class="dropdown-item" href="referral-code.html">Redeem</a></li>
+                                  <li><a class="dropdown-item" href="contest" id="contestJoinNavLabel">Join</a></li>
+                                  <li><a class="dropdown-item" href="redeem">Redeem</a></li>
                                 </ul>
                             </li>
+
                             <li class="nav-item">&nbsp;</li>
 
                             <li class="nav-item" id="lang_switch">
@@ -138,6 +140,10 @@
     </div>
     <!-- End Navbar Area -->
 
+    <!-- Contest Bg -->
+    <div class="background-contest"></div>
+    <!-- Contest Bg -->
+
     <!-- Page Title -->
     <section class="page-title-area pt-1 pb-5"></section>
     <!-- End Page Title -->
@@ -146,14 +152,14 @@
     <section class="pt-100 pb-70">
         <div class="container h-100">
             <div class="section-title">
-                <h2 id="textContestTitle">Check Out Our Competition</h2>
+                <h2 class="text-white" id="textContestTitle">Join the Impian Malaysia Contest</h2>
                 <span id="textContestDate" class="badge bg-secondary badge-date-custom mt-2">
                     Date: 29 Aug - 14 Sept 2024
                 </span>
             </div>
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-11">
-                    <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-register text-black" style="border-radius: 25px;">
                         <div class="card-body p-md-4">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -214,7 +220,7 @@
                                             <div class="col-12">
                                                 <input class="form-check-input me-2" type="checkbox" id="termsCheckbox" />
                                                 <label class="form-check-label form-check-label-sm" for="termsCheckboxLabel">
-                                                    <span id="tncLabel1">I agree all statements in </span> <a href="javascript:void(0)" class="form-check-tnc"><span id="tncLabel2"> Terms and Conditions</span></a>.
+                                                    <span id="tncLabel1">I agree all statements in </span> <a href="terms-condition" class="form-check-tnc"><span id="tncLabel2"> Terms and Conditions</span></a>.
                                                 </label>
                                             </div>
                                             <div class="error-message col-12" id="termsCheckboxError" style="color: red;"></div>
@@ -239,20 +245,65 @@
                                     </div>
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2">
-                                    <img src="assets/img/contest-form-1.jpeg" class="img-fluid img-contest-1" alt="Sample image">
+                                    <img src="assets/img/contest/Contest-Poster.png" class="img-fluid img-contest-1" alt="Sample image">
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="text-center text-danger">
+                                    <em class="sign-up-note" id="contestNote"><strong>*Note: Please whatsapp us on 014-6243375 if you face any issue during register.</strong></em>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center text-danger">
+            <!-- <div class="text-center text-danger">
                 <em class="sign-up-note" id="contestNote">*Note: Please whatsapp us on 014-6243375 if you face any issue during register.</em>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- End participation form area -->
 
+    <!-- How to Register area -->
+    <section class="contact-area pt-100 pb-70">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                
+                <div class=" col-sm-6 col-lg-4 order-1">
+                    <img src="assets/img/contest/contest-1.png" alt="contest-poster">
+                </div>
+                <div class="quality-img col-sm-6 col-lg-4 order-2">
+                    <img src="assets/img/contest/contest-2.png" alt="contest-poster">
+                </div>
+                <div class="quality-img col-sm-6 col-lg-4 order-3">
+                    <img src="assets/img/contest/contest-3.png" alt="contest-poster">
+                </div>
+            
+            <!-- <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-p-10">
+                <div class="quality-img">
+                    <img src="assets/img/contest/redeem-2.png" alt="contest-poster">
+                </div>
+            </div>
+            <div class="col-md-10 col-lg-6 col-xl-5 order-3 order-lg-p-10">
+                <div class="quality-img">
+                    <img src="assets/img/contest/redeem-3.png" alt="contest-poster">
+                </div>
+            </div> -->
+            <!-- <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-p-10">
+                <div class="quality-img">
+                    <img src="assets/img/contest/Redeem-Poster.png" alt="contest-poster">
+                </div>
+            </div> -->
+        </div>
+            <!-- <div class="row">
+                <div class="quality-img">
+                    <img src="assets/img/contest/Contest-steps.png" alt="Motorbike on the road">
+                </div>
+            </div> -->
+        </div>
+    </section>
+<!-- End how to Register area -->
 
     <!-- Footer -->
     <footer>
@@ -493,7 +544,7 @@
             } else {
                 displayErrorMessage('phone', '');
             }
-            
+
             if (locationInput.value.trim() === '') {
                 displayErrorMessage('location', 'This field is required');
                 isValid = false;

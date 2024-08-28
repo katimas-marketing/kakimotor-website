@@ -102,6 +102,10 @@ img {
   vertical-align: middle;
 }
 
+.pt-20 {
+  padding-top: 20px;
+}
+
 .ptb-100 {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -356,19 +360,107 @@ input.check-toggle-round-flat:checked+label:after {
 /*-- End Navbar --*/
 
 /*-- Banner --*/
-.banner-background {
-  /* background-image: url("../../../assets/img/cover_photo_bg.jpg"); */
-  background-image: url("../img/cover_photo_bg.jpg");
+.banner-background-3 {
+  background-image: url("../assets/img/cover_photo_bg.jpg");
+  /* background-image: url("../img/contest/Contest-Banner.png"); */
   max-width: 100%;
+  max-height: 100%;
   background-position: top;
   background-color: #ea5b0c;
 }
 
-.banner-area {
-  height: 700px;
+/* .banner-area {
+  height: 100%;
   background-color: #333333;
   position: relative;
   overflow: hidden;
+} */
+
+.banner-background {
+  background-image: url("../img/contest/Contest-Banner-2.png");
+  background-color: #000 !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-background-2 {
+  background-image: url("../img/contest/redeem-banner-2.png");
+  background-color: #000 !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* For screens larger than 1200px */
+@media (min-width: 1200px) {
+  /* .banner-background {
+    background-image: url("../../../assets/img/large_screen_image.jpg");
+  } */
+}
+
+/* For screens between 768px and 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .banner-background {
+    background-image: url("../img/contest/Contest-mobile.png");
+    height: 100%;
+    background-color: #000;
+  }
+
+  .banner-background-2 {
+    background-image: url("../img/contest/Redeem-Poster.png");
+    background-color: #000 !important;
+    /* background-size: contain; */
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+  .banner-area {
+    /* height: 10%; */
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    padding: none!important;
+    /* margin-top: 130px; */
+  }
+  .banner-background {
+    background-image: url("../img/contest/Contest-mobile-3.png");
+    height: 100%;
+    background-position: top;
+    background-size: contain;
+    padding-top: none;
+/* background-color: #000; */
+  }
+
+  .banner-background-2 {
+    background-image: url("../img/contest/redeem-mobile.png");
+    background-color: #000 !important;
+    /* background-size: contain; */
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+.banner-area {
+  height: 100%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  margin-top: 130px;
 }
 
 .banner-area .banner-img img {
@@ -427,8 +519,8 @@ input.check-toggle-round-flat:checked+label:after {
   border-radius:5px;
 }
 .cmn-btn a:hover {
-  border: 1px solid #30358c;
-  color: #30358c;
+  border: 3px solid #4872a2;
+  color: #ffffff;
   background: transparent;
 }
 
@@ -442,6 +534,7 @@ input.check-toggle-round-flat:checked+label:after {
 
 .cmn-btn .banner-btn-left {
   margin-right: 20px;
+  /* margin-top: 20vh; */
   position: relative;
   border-radius: 10px;
 }
@@ -453,7 +546,7 @@ input.check-toggle-round-flat:checked+label:after {
   height: 0%;
   left: 0;
   bottom: 0;
-  background-color: #e52521;
+  background-color: #e55c21;
   border-radius: 50% 50% 0 0;
   opacity: 0;
   transition: 0.5s all ease;
@@ -484,8 +577,9 @@ input.check-toggle-round-flat:checked+label:after {
 .address-area .row {
   background-color: #ffffff;
   box-shadow: 0px 10px 20px 0px #dddddd8a;
-  margin-top: -40px;
+  /* margin-top: -40px; */
   position: relative;
+  z-index: 99;
 }
 
 .address-area .address-one:before {

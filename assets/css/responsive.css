@@ -67,8 +67,8 @@
   .banner-area {
     height: 100%;
     text-align: center;
-    padding-top: 145px;
-    padding-bottom: 100px;
+    /* padding-top: 145px;
+    padding-bottom: 100px; */
     min-width: 100%;
     overflow-x: hidden;
   }
@@ -2378,3 +2378,21 @@
 
 
   /*# sourceMappingURL=responsive.css.map */
+
+  @media (max-width: 576px) {
+    .jkm-redeem-btn {
+        position: absolute;
+        top: 67px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+      }
+  }
+
+  @media (min-width: 576px) {
+    .jkm-redeem-btn {
+      transform: translateX(-146%);
+      top: 40px;
+      position: absolute;
+    }
+}

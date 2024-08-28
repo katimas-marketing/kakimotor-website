@@ -1,0 +1,41 @@
+.contest-pop-up {
+    width: 600px;
+    height: 200px;
+    background-color: #30358c;
+    color: #fff;
+    position: fixed;
+    right: -550px;
+    top: 100px;
+    transition: transform 0.2s;
+    display: none !important;
+}
+.contest-pop-up-toggle {
+    transform: translateX(-550px);
+}
+.pop-inner-1 {
+    float: left;
+    /* background: black; */
+    height: 100%;
+    width: 50px;
+}
+.pop-inner-txt-1 {
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    top: 50%;
+    left: 4%;
+    transform: translate(-50%, -50%)  rotate(-90deg);
+    /* background: #30358c; */
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pop-inner-2 {
+    float: left;
+    background: orange;
+    height: 100%;
+    width: 550px;
+}

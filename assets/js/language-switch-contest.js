@@ -65,7 +65,7 @@ languageToggle.addEventListener('change', function() {
 function updateContest(language) {
   if (language === 'bm') {
     ContestTitle.textContent = 'Sertailah Pertandingan Impian Malaysia';
-    ContestDate.textContent = 'Tarikh: 29 Ogos - 14 Sept 2024';
+    ContestDate.textContent = 'Tarikh: 1 Sept - 14 Sept 2024';
     ContestFormTitle.textContent = 'Daftar';
     ContestFormNameAsIc.textContent = 'Nama Penuh (ikut NRIC):';
     ContestFormIcNo.textContent = 'No. IC:';
@@ -85,7 +85,7 @@ function updateContest(language) {
     ContestSuccessMessage.textContent = "Terima kasih kerana mendaftar! Sila semak emel anda untuk pengesahan video. Sila hubungi kami jika anda tidak menerima sebarang emel dalam masa 10 minit.";
   } else {
     ContestTitle.textContent = 'Join the Impian Malaysia Contest';
-    ContestDate.textContent = 'Date: 29 Aug - 14 Sept 2024';
+    ContestDate.textContent = 'Date: 1 Sept - 14 Sept 2024';
     ContestFormTitle.textContent = 'Sign up';
     ContestFormNameAsIc.textContent = 'Full Name (as in NRIC):';
     ContestFormIcNo.textContent = 'IC No:';

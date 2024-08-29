@@ -1033,6 +1033,16 @@
   /*----- End Contact CSS -----*/
 }
 
+@media only screen and (min-width: 768px) {
+  .quality-content-1 {
+    max-width: 25%;
+  }
+
+  .quality-content-2 {
+    max-width: 55%;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   /*-- Default CSS --*/
@@ -2401,7 +2411,7 @@
 
   @media (min-width: 576px) {
     .jkm-redeem-btn {
-      transform: translateX(-146%);
+      /* transform: translateX(-146%); */
       top: 40px;
       position: absolute;
     }

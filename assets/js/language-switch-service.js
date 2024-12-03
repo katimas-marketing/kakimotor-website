@@ -16,7 +16,7 @@ const textHowF = document.getElementById('textHowF');
 const textOurBikeF = document.getElementById('textOurBikeF');
 const textContactUsF = document.getElementById('textContactUsF');
 const textFindUs = document.getElementById('textFindUs');
-const textTC = document.getElementById('textTC');
+// const textTC = document.getElementById('textTC');
 const textPrivacy = document.getElementById('textPrivacy');
 
 // Service
@@ -116,8 +116,8 @@ function updateFooter(language) {
     textOurBikeF.textContent = 'Motosikal Kami';
     textContactUsF.textContent = 'Hubungi Kami';
     textFindUs.textContent = 'Ikuti Kami Di';
-    textTC.textContent = 'Terma dan Syarat';
-    textPrivacy.textContent = 'Dasar Privasi';
+    // textTC.textContent = 'Terma dan Syarat';
+    // textPrivacy.textContent = 'Dasar Privasi';
     
   } else {
     textFooterAdd.textContent = 'We are dedicated to providing our customers with the best possible experience when shopping for a motorbike. We look forward to helping you find the perfect bike for your needs and supporting you throughout your motorbike journey';
@@ -129,7 +129,7 @@ function updateFooter(language) {
     textContactUsF.textContent = 'Contact Us';
     textFindUs.textContent = 'Find Us';
     // textTC.textContent = 'Terms and Conditions';
-    textPrivacy.textContent = 'Privacy Policy';
+    // textPrivacy.textContent = 'Privacy Policy';
     
   }
 }

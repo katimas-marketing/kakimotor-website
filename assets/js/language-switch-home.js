@@ -23,8 +23,8 @@ const textPrivacy = document.getElementById('textPrivacy');
 const textDreamMoto = document.getElementById('textDreamMoto');
 const dreamMotoParagraph = document.getElementById('dreamMotoParagraph');
 const textKnowMore = document.getElementById('textKnowMore');
-const textRegisterBtn = document.getElementById('textRegisterBtn'); //contest
-const textRedeemBtn = document.getElementById('textRedeemBtn'); //contest
+// const textRegisterBtn = document.getElementById('textRegisterBtn'); //contest
+// const textRedeemBtn = document.getElementById('textRedeemBtn'); //contest
 const textLocation = document.getElementById('textLocation');
 const textCallUs = document.getElementById('textCallUs');
 const textOpeningHours = document.getElementById('textOpeningHours');
@@ -101,8 +101,8 @@ function updateFooter(language) {
     textOurBikeF.textContent = 'Motosikal Kami';
     textContactUsF.textContent = 'Hubungi Kami';
     textFindUs.textContent = 'Ikuti Kami Di';
-    textTC.textContent = 'Terma dan Syarat';
-    textPrivacy.textContent = 'Dasar Privasi';
+    // textTC.textContent = 'Terma dan Syarat';
+    // textPrivacy.textContent = 'Dasar Privasi';
     
   } else {
     textFooterAdd.textContent = 'We are dedicated to providing our customers with the best possible experience when shopping for a motorbike. We look forward to helping you find the perfect bike for your needs and supporting you throughout your motorbike journey';
@@ -114,7 +114,7 @@ function updateFooter(language) {
     textContactUsF.textContent = 'Contact Us';
     textFindUs.textContent = 'Find Us';
     // textTC.textContent = 'Terms and Conditions';
-    textPrivacy.textContent = 'Privacy Policy';
+    // textPrivacy.textContent = 'Privacy Policy';
     
   }
 }
@@ -125,8 +125,8 @@ function updateIndex(language) {
     textDreamMoto.textContent = 'Miliki Motosikal Impian Anda';
     dreamMotoParagraph.textContent = 'Sebagai pengedar motosikal Yamaha dan Honda, kami adalah peminat motosikal yang bersemangat untuk memberikan anda pengalaman membeli-belah motosikal terbaik';
     textKnowMore.textContent = 'Ketahui Lebih Lanjut';
-    textRedeemBtn.textContent = 'Tebus Kod Anda';
-    textRegisterBtn.textContent = 'Daftar';
+    // textRedeemBtn.textContent = 'Tebus Kod Anda';
+    // textRegisterBtn.textContent = 'Daftar';
     textLocation.textContent = 'Lokasi';
     textCallUs.textContent = 'Hubungi Kami';
     textOpeningHours.textContent = 'Waktu Operasi';
@@ -152,8 +152,8 @@ function updateIndex(language) {
     textDreamMoto.textContent = 'Own your dream motorbike';
     dreamMotoParagraph.textContent = 'As an authorised dealer of Yamaha and Honda underbone motorcycles, we are a team of motor enthusiasts passionate in providing you with the best motor shopping experience.';
     textKnowMore.textContent = 'Know More';
-    textRedeemBtn.textContent = 'Redeem Your Code';
-    textRegisterBtn.textContent = 'Register';
+    // textRedeemBtn.textContent = 'Redeem Your Code';
+    // textRegisterBtn.textContent = 'Register';
     textLocation.textContent = 'Location';
     textCallUs.textContent = 'Call Us';
     textOpeningHours.textContent = 'Opening Hours';

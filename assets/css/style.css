@@ -4000,6 +4000,10 @@ footer .footer-img {
   color: #343434;
 }
 
+.border-none {
+  border: none !important;
+}
+
 .contact-area .contact-left ul li a:hover {
   color: #ea5b0c;
 }

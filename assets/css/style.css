@@ -4049,7 +4049,8 @@ footer .footer-img {
 }
 
 .contact-area .contact-right .contact-btn {
-  background-color: #ea5b0c;
+  /* background-color: #ea5b0c; */
+  background-color: #eb9319;
   color: #ffffff;
   width: 100%;
   border-radius: 0;
@@ -4080,7 +4081,7 @@ footer .footer-img {
 }
 
 .contact-area .contact-right .text-center {
-  color: #dc3545 !important;
+  /* color: #dc3545 !important; */
   font-weight: 400px !important;
   font-size: 20px !important;
 
@@ -4092,7 +4093,16 @@ footer .footer-img {
   align-items: center;
 }
 
-
+.bg-grey{
+  /* background-color: #f4eded!important; */
+  background-color: #ea5b0c !important;
+}
+.bg-red{
+  background-color: red !important;
+}
+.paddingContact {
+  padding: 100px 20px;
+}
 
 
 /*----- End Contact CSS -----*/
